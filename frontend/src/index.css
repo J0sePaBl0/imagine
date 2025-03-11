@@ -1,14 +1,10 @@
 @import "tailwindcss";
 @theme {
     --color-purple: #26134C;
+    --color-regal-blue: #243c5a;
+    
 }
 
-.text-purple{
-    color: var(--color-purple);
-}
-.bg-purple{
-    background-color: var(--color-purple);
-}
 
 body {
     background: rgb(40,20,83);
