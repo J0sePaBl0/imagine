@@ -8,8 +8,8 @@ function App() {
 
   return (
     <>
-      <div >
-       
+      <div class="bg-midnight text-tahiti">
+          <h1 class="text-tahiti">Hola</h1>
       </div>
     </>
   )
