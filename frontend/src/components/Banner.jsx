@@ -1,14 +1,20 @@
 export function Banner() {
   return (
    
-    <div className="flex mx-auto h-screen border border-green-700 w-2/3 mt-10 flex-wrap">
-        <div className="min-w-20 flex flex-col w-1/2 h-1/2 border border-yellow-200 justify-center items-end pr-5">
-            <div className="items-center border border-blue-300 w-2/3">
-              <h4 class="mb-1 text-4xl font-bold text-white">EL ARTE QUE AMAS</h4>
-              <h1 class="mb-1 text-6xl font-bold text-white">EN EL LUGAR</h1>
-              <h2 class="mb-1 text-6xl font-bold text-white">QUE DESEAS</h2>
+    <div className="flex mx-auto h-screen w-2/3 mt-10 flex-wrap">
+        <div className="min-w-20 flex flex-col w-1/2 h-1/2 justify-center items-end ">
+            <div className="items-center w-2/3">
+              <h4 class="mb-1 
+              text-4xl font-bold 
+              text-white">EL ARTE QUE AMAS</h4>
+              <h1 class="mb-1 
+              text-6xl font-bold 
+              text-white">EN EL LUGAR</h1>
+              <h2 class="mb-1 
+              text-6xl font-bold 
+              text-white">QUE DESEAS</h2>
             </div>
-            <div className="flex flex-row border border-yellow-400 w-2/3 my-8">
+            <div className="flex flex-row w-2/3 my-8">
             <button class="relative w-1/2 
             inline-flex items-center 
             justify-center 
@@ -54,12 +60,11 @@ export function Banner() {
               py-2.5 
               text-center 
               me-2
-              mb-2">Purple</button>
+              mb-2">Ver cuadro</button>
             </div>
         </div>
-
-        <div class="min-w-20 w-1/2 h-1/2 flex flex-col border border-red-600 justify-center items-center pl-5">
-            <img class="h-full md:h-auto md:w-96 " src="/images/Goku.jpg" alt=""></img>
+        <div class="min-w-20 w-1/2 h-1/2 flex flex-col justify-center items-start pl-10">
+            <img class="h-full md:h-auto md:w-84 " src="/images/Goku.jpg" alt=""></img>
         </div>
     </div>
 
