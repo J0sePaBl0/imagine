@@ -1,20 +1,30 @@
 export function Banner() {
   return (
    
-    <div className="flex mx-auto h-screen w-2/3 mt-10 flex-wrap">
-        <div className="min-w-20 flex flex-col w-1/2 h-1/2 justify-center items-end ">
-            <div className="items-center w-2/3">
-              <h4 class="mb-1 
-              text-4xl font-bold 
-              text-white">EL ARTE QUE AMAS</h4>
-              <h1 class="mb-1 
-              text-6xl font-bold 
-              text-white">EN EL LUGAR</h1>
-              <h2 class="mb-1 
-              text-6xl font-bold 
-              text-white">QUE DESEAS</h2>
+    <div className="flex mx-auto h-screen md:w-2/3 sm:w-1/2 mt-30 flex-wrap border border-amber-500">
+        <div className="border border-blue-600 md:min-w-180 flex flex-col w-full sm:w-full md:w-2/3 h-1/2 justify-center sm:items-center">
+            <div className=" border border-amber-300 md:w-2/3 flex flex-col sm:justify-items-center md:items-start">
+              <h4 class="mb-1
+              w-1/2
+              border border-amber-600
+              text-2xl 
+              md:text-5xl font-bold 
+              sm:text-3xl
+              text-gray-300 text-nowrap">EL ARTE QUE AMAS</h4>
+              <h1 class="mb-1
+              border border-amber-600
+              w-1/2
+              text-4xl 
+              md:text-7xl sm:text-5xl font-bold 
+              text-purple-600 text-nowrap">EN EL LUGAR</h1>
+              <h2 class="mb-1
+              border border-amber-600
+              w-1/2
+              text-4xl  
+              md:text-7xl sm:text-5xl font-bold
+              text-white text-nowrap">QUE DESEAS</h2>
             </div>
-            <div className="flex flex-row w-2/3 my-8">
+            <div className="border border-red-600 pl-10 flex flex-row md:w-2/3 my-8 ">
             <button class="relative w-1/2 
             inline-flex items-center 
             justify-center 
@@ -40,7 +50,7 @@ export function Banner() {
               rounded-md">
               Ver catálogo
               </span>
-            </button>
+              </button>
               <button type="button" class="text-white
               w-1/2  
               bg-gradient-to-r 
@@ -63,8 +73,8 @@ export function Banner() {
               mb-2">Ver cuadro</button>
             </div>
         </div>
-        <div class="min-w-20 w-1/2 h-1/2 flex flex-col justify-center items-start pl-10">
-            <img class="h-full md:h-auto md:w-84 " src="/images/Goku.jpg" alt=""></img>
+        <div class="min-w-1/3 sm:static md:relative border border-green-500 h-1/2 flex flex-col justify-center items-center pr-10">
+            <img class="md:absolute md:right-30 h-full md:h-auto md:w-96 " src="/images/Goku.jpg" alt=""></img>
         </div>
     </div>
 
