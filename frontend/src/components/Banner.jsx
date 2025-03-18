@@ -1,27 +1,38 @@
 export function Banner() {
   return (
    
-    <div className="flex mx-auto h-screen md:w-2/3 sm:w-1/2 mt-30 flex-wrap border border-amber-500">
-        <div className="border border-blue-600 md:min-w-180 flex flex-col w-full sm:w-full md:w-2/3 h-1/2 justify-center sm:items-center">
-            <div className=" border border-amber-300 md:w-2/3 flex flex-col sm:justify-items-center md:items-start justify-center items-center">
+    <div className="flex mx-auto h-screen 2xl:w-2/3 w-full sm:w-1/2 mt-30 flex-wrap border border-amber-500">
+        <div className="border border-blue-600 :min-w-180 sm:min-w-50 flex flex-col w-full 2xl:w-2/3 h-1/2 justify-center sm:items-center">
+            <div className=" border border-amber-300 w-full md:w-2/3 sm:w-full flex flex-col sm:justify-items-center md:items-start justify-center items-center">
               <h4 class="mb-1
               w-1/2
+              sm:w-full
               border border-amber-600
-              text-2xl 
-              md:text-5xl font-bold 
+              text-2xl
               sm:text-3xl
-              text-gray-300 text-nowrap">EL ARTE QUE AMAS</h4>
+              md:text-4xl
+              xl:text-5xl
+              font-bold 
+            text-gray-300 text-nowrap">EL ARTE QUE AMAS</h4>
               <h1 class="mb-1
               border border-amber-600
               w-1/2
+              sm:w-full
               text-4xl 
-              md:text-7xl sm:text-5xl font-bold 
+              sm:text-5xl
+              md:text-6xl
+              xl:text-7xl  
+              font-bold 
               text-purple-600 text-nowrap">EN EL LUGAR</h1>
               <h2 class="mb-1
               border border-amber-600
               w-1/2
-              text-4xl  
-              md:text-7xl sm:text-5xl font-bold
+              sm:w-full
+              text-4xl
+              sm:text-5xl
+              md:text-6xl 
+              xl:text-7xl  
+              font-bold
               text-white text-nowrap">QUE DESEAS</h2>
             </div>
             <div className="border border-red-600 flex flex-row md:w-2/3 my-8 sm:justify-start md:justify-items-start justify-center">
@@ -75,8 +86,8 @@ export function Banner() {
                 </div>
             </div>
         </div>
-        <div class="md:min-w-1/3 md:w-1/3 sm:static md:relative border border-green-500 h-1/2 flex flex-col justify-center items-center md:pr-10 w-full">
-            <img class="md:absolute md:right-30 md:h-auto md:w-96 sm:w-46 w-46 h-auto" src="/images/Goku.jpg" alt=""></img>
+        <div class="flex flex-col w-full 2xl:w-1/3 justify-center sm:justify-center md:justify-center lg:justify-center  items-center sm:static md:relative border border-green-500 h-1/2 md:pr-10">
+            <img class="2xl:absolute 2xl:right-30 2xl:h-auto 2xl:min-w-86 sm:w-96 w-46 h-auto" src="/images/Goku.jpg" alt=""></img>
         </div>
     </div>
 
