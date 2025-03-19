@@ -5,14 +5,15 @@ export function Banner() {
     lg:w-2/3 
     mt-10 
     md:mt-10
-    w-full 
+    w-1/2 
     sm:w-1/2 
     flex-wrap-reverse
     flex-row">
         <div className="
         sm:min-w-50 
         flex flex-col 
-        w-full 
+        w-full
+        sm:w-full 
         lg:w-2/3 
         justify-center 
         items-center
@@ -20,7 +21,7 @@ export function Banner() {
         sm:items-center 
         lg:items-start
         2xl:items-center">
-          <div className="
+          <div className=" 
             w-3/5
             md:w-4/5
             sm:w-full 
@@ -30,10 +31,10 @@ export function Banner() {
             justify-center 
             items-center
             pb-3">
-              <h4 class="mb-1
-              w-3/4
-              sm:w-4/5
-              md:w-full
+              <h4 class="mb-1 
+              w-auto
+              sm:w-auto
+              md:w-auto
               text-2xl
               sm:text-3xl
               md:text-4xl
@@ -41,10 +42,10 @@ export function Banner() {
               font-bold 
             text-gray-300 
               text-nowrap">EL ARTE QUE AMAS</h4>
-              <h1 class="mb-1 
-              w-3/4
-              sm:w-4/5
-              md:w-full
+              <h1 class="mb-1  
+              w-auto
+              sm:w-auto
+              md:w-auto
               text-4xl 
               sm:text-5xl
               md:text-6xl
@@ -52,9 +53,9 @@ export function Banner() {
               font-bold 
             text-purple-600 
               text-nowrap">EN EL LUGAR</h1>
-              <h2 class="mb-1
-              w-3/4
-              sm:w-4/5
+              <h2 class="mb-1 
+              w-auto
+              sm:w-auto
               md:w-full
               text-4xl
               sm:text-5xl
@@ -64,11 +65,12 @@ export function Banner() {
               text-white 
               text-nowrap">QUE DESEAS</h2>
             </div>
-            <div className=" 
+            <div className="
             flex flex-row 
             md:w-4/5
-            sm:w-4/5
+            sm:w-5/6
             sm:mt-5
+            w-5/6
             md:justify-items-start 
             justify-center
             pb-5">
@@ -76,10 +78,12 @@ export function Banner() {
               flex flex-row  
               md:w-full
               sm:w-full
+              w-full
               md:justify-items-end">
                 <button class="relative 
                   w-1/2 
-                  inline-flex items-center 
+                  inline-flex 
+                  items-center 
                   justify-center 
                   p-0.5 me-2 
                   text-sm font-medium 
@@ -95,8 +99,7 @@ export function Banner() {
                   transition-shadow 
                   duration-300">
                   <span class="relative
-                    w-full
-                    px-5 
+                    w-full 
                     py-2.5 
                     transition-all 
                     ease-in 
@@ -108,7 +111,8 @@ export function Banner() {
                     Ver catálogo
                   </span>
                   </button>
-                  <button type="button" class="text-white
+                  <button type="button" class="
+                  text-white
                   w-1/2 
                   bg-gradient-to-r 
                   from-purple-500 
@@ -125,14 +129,12 @@ export function Banner() {
                   duration-300 
                   font-medium 
                   rounded-lg 
-                  text-sm 
-                  px-5 
+                  text-sm  
                   py-2.5 
                   text-center 
                   text-nowrap">
                     <span class="relative
                       w-full
-                      px-5 
                       py-2.5 
                       transition-all 
                       ease-in 
