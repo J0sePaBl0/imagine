@@ -31,7 +31,7 @@ export function Banner() {
             items-center
             pb-3">
               <h4 class="mb-1
-              w-3/5
+              w-3/4
               sm:w-4/5
               md:w-full
               text-2xl
@@ -42,7 +42,7 @@ export function Banner() {
             text-gray-300 
               text-nowrap">EL ARTE QUE AMAS</h4>
               <h1 class="mb-1 
-              w-3/5
+              w-3/4
               sm:w-4/5
               md:w-full
               text-4xl 
@@ -53,7 +53,7 @@ export function Banner() {
             text-purple-600 
               text-nowrap">EN EL LUGAR</h1>
               <h2 class="mb-1
-              w-3/5
+              w-3/4
               sm:w-4/5
               md:w-full
               text-4xl
@@ -153,17 +153,20 @@ export function Banner() {
         sm:justify-center 
         md:justify-center 
         items-center 
-        
         xl:pr-10">
             <img class="2xl:absolute 
             2xl:right-30 
             2xl:h-auto 
-            2xl:min-w-86 
-            lg:max-w-100 
+            2xl:min-w-86
+            lg:w-80
+            lg:max-w-100
+            md:max-w-80 
             sm:w-75
             w-60
-            lg:w-90
-            lg:pr-10"
+            hover:shadow-lg 
+          hover:shadow-purple-600/100
+            transition-shadow 
+            duration-400"
             src="/images/Goku.jpg" alt=""></img>
         </div>
     </div>
