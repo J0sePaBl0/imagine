@@ -20,7 +20,7 @@ export function Banner() {
         sm:items-center 
         lg:items-start
         2xl:items-center">
-            <div className="
+          <div className="
             w-3/5
             md:w-4/5
             sm:w-full 
@@ -73,60 +73,76 @@ export function Banner() {
             justify-center
             pb-5">
             <div className="
-            flex flex-row  
-            md:w-full
-            sm:w-full
-            md:justify-items-end">
-              <button class="relative 
-                w-1/2 
-                inline-flex items-center 
-                justify-center 
-                p-0.5 me-2 
-                text-sm font-medium 
-                text-white 
-                rounded-lg group 
-                bg-gradient-to-br 
-                from-purple-600 
-                to-blue-500 
-                focus:outline-none 
-                focus:ring-blue-300 
-                hover:shadow-lg 
-                hover:shadow-purple-500/90 
-                transition-shadow 
-                duration-300">
-                <span class="relative
-                  w-full
+              flex flex-row  
+              md:w-full
+              sm:w-full
+              md:justify-items-end">
+                <button class="relative 
+                  w-1/2 
+                  inline-flex items-center 
+                  justify-center 
+                  p-0.5 me-2 
+                  text-sm font-medium 
+                  text-white 
+                  rounded-lg group 
+                  bg-gradient-to-br 
+                  from-purple-600 
+                  to-blue-500 
+                  focus:outline-none 
+                  focus:ring-blue-300 
+                  hover:shadow-lg 
+                  hover:shadow-purple-600/90 
+                  transition-shadow 
+                  duration-300">
+                  <span class="relative
+                    w-full
+                    px-5 
+                    py-2.5 
+                    transition-all 
+                    ease-in 
+                    duration-75 
+                    bg-black 
+                    rounded-md 
+                    text-sm
+                    text-nowrap">
+                    Ver catálogo
+                  </span>
+                  </button>
+                  <button type="button" class="text-white
+                  w-1/2 
+                  bg-gradient-to-r 
+                  from-purple-500 
+                  via-purple-600 
+                  to-blue-600
+                  hover:bg-gradient-to-br 
+                  focus:ring-4 
+                  focus:outline-none 
+                  focus:ring-purple-300 
+                  dark:focus:ring-purple-800 
+                  hover:shadow-lg 
+                  hover:shadow-purple-600/90 
+                  transition-shadow 
+                  duration-300 
+                  font-medium 
+                  rounded-lg 
+                  text-sm 
                   px-5 
                   py-2.5 
-                  transition-all 
-                  ease-in 
-                  duration-75 
-                  bg-black 
-                  rounded-md 
-                  text-sm
+                  text-center 
                   text-nowrap">
-                  Ver catálogo
-                </span>
-                </button>
-                <button type="button" class="text-white
-                w-1/2 
-                bg-gradient-to-r 
-                from-purple-500 
-                via-purple-600 
-                to-blue-600
-                hover:bg-gradient-to-br 
-                focus:ring-4 
-                focus:outline-none 
-                focus:ring-purple-300 
-                dark:focus:ring-purple-800 
-                hover:shadow-lg shadow-purple-500/50 
-                font-medium 
-                rounded-lg 
-                text-sm 
-                px-5 
-                py-2.5 
-                text-center 
-                text-nowrap">Ver cuadro</button>
+                    <span class="relative
+                      w-full
+                      px-5 
+                      py-2.5 
+                      transition-all 
+                      ease-in 
+                      duration-75 
+                      rounded-md 
+                      text-sm
+                      text-nowrap">
+                      Ver cuadro
+                    </span>
+                  </button>
                 </div>
             </div>
         </div>
