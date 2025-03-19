@@ -2,7 +2,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import { Banner } from './components/Banner'
 import { Navbar } from './components/Navbar'
-
+import { GoalsSection } from './components/GoalsSection'
 import './App.css'
 
 export function App() {
@@ -13,6 +13,7 @@ export function App() {
    <div class="xl-64">
       <Navbar />
       <Banner />
+      <GoalsSection />
     </div>
   </>
   )
