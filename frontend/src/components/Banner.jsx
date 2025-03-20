@@ -4,7 +4,7 @@ import { SecundaryButton } from './SecundaryButton'
 export function Banner() {
   return (
    
-    <div className="flex mx-auto 
+    <div className="flex mx-auto border border-blue-900
     lg:w-2/3 
     mt-10 
     md:mt-10
@@ -12,21 +12,22 @@ export function Banner() {
     sm:w-1/2 
     flex-wrap-reverse
     flex-row">
-        <div className="
+        <div className="border border-amber-600
         sm:min-w-50 
         flex flex-col 
         w-full
         sm:w-full 
-        lg:w-2/3 
+        lg:w-2/3
         justify-center 
         items-center
-        lg:pl-10 
+        lg:pl-20 
         sm:items-center 
         lg:items-start
-        2xl:items-center">
-          <div className=" 
+        xl:items-start">
+          <div className="border border-emerald-500
             w-3/5
             md:w-4/5
+            xl:w-4/5
             sm:w-full 
             flex flex-col 
             sm:justify-items-center 
@@ -41,7 +42,8 @@ export function Banner() {
               text-2xl
               sm:text-3xl
               md:text-4xl
-              xl:text-5xl
+              xl:text-[40px]
+              2xl:text-[50px]
               font-bold 
             text-gray-300 
               text-nowrap">EL ARTE QUE AMAS</h4>
@@ -52,7 +54,8 @@ export function Banner() {
               text-4xl 
               sm:text-5xl
               md:text-6xl
-              xl:text-7xl  
+              xl:text-[65px]
+              2xl:text-[80px]
               font-bold 
             text-purple-600 
               text-nowrap">EN EL LUGAR</h1>
@@ -63,12 +66,13 @@ export function Banner() {
               text-4xl
               sm:text-5xl
               md:text-6xl 
-              xl:text-7xl  
+              xl:text-[65px]
+              2xl:text-[80px]  
               font-bold
               text-white 
               text-nowrap">QUE DESEAS</h2>
             </div>
-            <div className="
+            <div className=" border border-fuchsia-800
             flex flex-row 
             md:w-4/5
             sm:w-5/6
@@ -77,8 +81,9 @@ export function Banner() {
             md:justify-items-start 
             justify-center
             pb-5">
-            <div className="
-              flex flex-row  
+            <div className="border border-blue-400
+              flex flex-row
+              xl: 
               md:w-full
               sm:w-full
               w-full
@@ -96,10 +101,11 @@ export function Banner() {
         md:justify-center 
         items-center 
         xl:pr-10">
-            <img class="2xl:absolute 
+            <img class="
             2xl:right-30 
             2xl:h-auto 
             2xl:min-w-86
+            2xl:w-96
             lg:w-80
             lg:max-w-100
             md:max-w-80 
