@@ -10,7 +10,7 @@ export function App() {
 
   return (
   <>
-   <div class="xl-64">
+   <div class="flex flex-col justify-center items-center">
       <Navbar />
       <Banner />
       <GoalsSection />

@@ -4,7 +4,7 @@ import { SecundaryButton } from './SecundaryButton'
 export function Banner() {
   return (
    
-    <div className="flex mx-auto border border-blue-900
+    <div className="flex mx-auto 
     lg:w-2/3 
     mt-10 
     md:mt-10
@@ -12,7 +12,7 @@ export function Banner() {
     sm:w-1/2 
     flex-wrap-reverse
     flex-row">
-        <div className="border border-amber-600
+        <div className="
         sm:min-w-50 
         flex flex-col 
         w-full
@@ -24,7 +24,7 @@ export function Banner() {
         sm:items-center 
         lg:items-start
         xl:items-start">
-          <div className="border border-emerald-500
+          <div className="
             w-3/5
             md:w-4/5
             xl:w-4/5
@@ -72,7 +72,7 @@ export function Banner() {
               text-white 
               text-nowrap">QUE DESEAS</h2>
             </div>
-            <div className=" border border-fuchsia-800
+            <div className=" 
             flex flex-row 
             md:w-4/5
             sm:w-5/6
@@ -81,7 +81,7 @@ export function Banner() {
             md:justify-items-start 
             justify-center
             pb-5">
-            <div className="border border-blue-400
+            <div className="
               flex flex-row
               xl: 
               md:w-full
