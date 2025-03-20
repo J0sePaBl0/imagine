@@ -40,7 +40,7 @@ export function Banner() {
               <h4
                 className="mb-1 w-auto text-nowrap font-bold text-gray-300"
                 style={{
-                  fontSize: 'clamp(1.5rem, 3.400vw, 3.500rem)',
+                  fontSize: 'clamp(1.6rem, 3.400vw, 3.500rem)',
                 }}
                 >
                 EL ARTE QUE AMAS
@@ -57,13 +57,13 @@ export function Banner() {
               font-bold 
             text-purple-600 
               text-nowrap"style={{
-                fontSize: 'clamp(1.5rem, 5vw, 5rem)',
+                fontSize: 'clamp(2.3rem, 5vw, 5rem)',
               }}>EN EL LUGAR</h1>
               <h2 class="mb-1 
               font-bold
               text-white 
               text-nowrap"style={{
-                fontSize: 'clamp(1.5rem, 5.200vw, 5.125rem)',
+                fontSize: 'clamp(2.3rem, 5.200vw, 5.125rem)',
               }}>QUE DESEAS</h2>
             </div>
             <div className=" 
