@@ -4,7 +4,7 @@ import { SecundaryButton } from './SecundaryButton'
 export function Banner() {
   return (
    
-    <div className="flex mx-auto 
+    <div className="flex mx-auto
     lg:w-2/3 
     mt-10 
     md:mt-10
@@ -20,10 +20,12 @@ export function Banner() {
         lg:w-2/3
         justify-center 
         items-center
-        lg:pl-20 
+        xl:pl-10
         sm:items-center 
         lg:items-start
-        xl:items-start">
+        xl:items-start
+        2xl:items-start
+        2xl:justify-items-start">
           <div className="
             w-3/5
             md:w-4/5
@@ -35,18 +37,14 @@ export function Banner() {
             justify-center 
             items-center
             pb-3">
-              <h4 class="mb-1 
-              w-auto
-              sm:w-auto
-              md:w-auto
-              text-2xl
-              sm:text-3xl
-              md:text-4xl
-              xl:text-[40px]
-              2xl:text-[50px]
-              font-bold 
-            text-gray-300 
-              text-nowrap">EL ARTE QUE AMAS</h4>
+              <h4
+                className="mb-1 w-auto text-nowrap font-bold text-gray-300"
+                style={{
+                  fontSize: 'clamp(1.5rem, 3.400vw, 3.500rem)',
+                }}
+                >
+                EL ARTE QUE AMAS
+              </h4>
               <h1 class="mb-1  
               w-auto
               sm:w-auto
@@ -58,19 +56,15 @@ export function Banner() {
               2xl:text-[80px]
               font-bold 
             text-purple-600 
-              text-nowrap">EN EL LUGAR</h1>
+              text-nowrap"style={{
+                fontSize: 'clamp(1.5rem, 5vw, 5rem)',
+              }}>EN EL LUGAR</h1>
               <h2 class="mb-1 
-              w-auto
-              sm:w-auto
-              md:w-full
-              text-4xl
-              sm:text-5xl
-              md:text-6xl 
-              xl:text-[65px]
-              2xl:text-[80px]  
               font-bold
               text-white 
-              text-nowrap">QUE DESEAS</h2>
+              text-nowrap"style={{
+                fontSize: 'clamp(1.5rem, 5.200vw, 5.125rem)',
+              }}>QUE DESEAS</h2>
             </div>
             <div className=" 
             flex flex-row 
@@ -100,9 +94,9 @@ export function Banner() {
         sm:justify-center 
         md:justify-center 
         items-center 
-        xl:pr-10">
-            <img class="
-            2xl:right-30 
+        xl:pr-20
+        lg:pr-10">
+            <img class=" 
             2xl:h-auto 
             2xl:min-w-86
             2xl:w-96
