@@ -9,7 +9,7 @@ export function AboutSection (){
             Imagine
             </h1>
             <p style={{
-                fontSize: 'clamp(15px, 5.200vw, 10px)',
+                fontSize: 'clamp(5px, 3vw, 20px)',
               }} className="text-white">
             En Imagine, creemos que cada espacio cuenta una historia, y qué mejor manera de narrarla que a través del arte. Nos especializamos en la creación de cuadros únicos que transforman ambientes y reflejan la esencia de quienes los habitan.
             Nuestra pasión por el arte y el diseño nos ha llevado a ofrecer un servicio completamente personalizado, donde tú eres el protagonista. Desde elegir entre nuestras colecciones exclusivas hasta diseñar tu propio cuadro, en Imagine hacemos realidad tus ideas y emociones en cada pincelada.
