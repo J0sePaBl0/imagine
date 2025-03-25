@@ -1,17 +1,26 @@
 import { PrimaryButton } from './PrimaryButton'
 import { SecundaryButton } from './SecundaryButton'
+import { motion } from "motion/react"
 
 export function Banner() {
   return (
-   
-    <div className="flex mx-auto
+    
+    <motion.div 
+    className="flex mx-auto
     lg:w-2/3 
     mt-10 
     md:mt-10
     w-1/2 
     sm:w-1/2 
     flex-wrap-reverse
-    flex-row">
+    flex-row"
+    initial={{ y: 100}}
+    animate={{ y: 0}}
+    transition={{ 
+      duration: 0.8,
+      type: "spring",
+      stiffness: 50}}>
+
         <div className="
         sm:min-w-50 
         flex flex-col 
@@ -96,7 +105,7 @@ export function Banner() {
         items-center 
         xl:pr-20
         lg:pr-10">
-            <img class=" 
+            <motion.img class=" 
             2xl:h-auto 
             2xl:min-w-86
             2xl:w-96
@@ -109,8 +118,12 @@ export function Banner() {
           hover:shadow-purple-600/100
             transition-shadow 
             duration-400"
-            src="/images/Goku.jpg" alt=""></img>
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 3 }}
+            src="/images/Goku.jpg" alt=""></motion.img>
         </div>
-    </div>
+    </motion.div>
+    
   )
 }
