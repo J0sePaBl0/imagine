@@ -1,6 +1,8 @@
-import { PrimaryButton } from './PrimaryButton'
-import { SecundaryButton } from './SecundaryButton'
-import { motion } from "motion/react"
+import { PrimaryButton } from './PrimaryButton';
+import { SecundaryButton } from './SecundaryButton';
+import { motion } from "motion/react";
+import AnimatedTitles from './AnimatedTitles';
+
 
 export function Banner() {
   return (
@@ -46,34 +48,7 @@ export function Banner() {
             justify-center 
             items-center
             pb-3">
-              <h4
-                className="mb-1 w-auto text-nowrap font-bold text-gray-300"
-                style={{
-                  fontSize: 'clamp(1.6rem, 3.400vw, 3.500rem)',
-                }}
-                >
-                EL ARTE QUE AMAS
-              </h4>
-              <h1 class="mb-1  
-              w-auto
-              sm:w-auto
-              md:w-auto
-              text-4xl 
-              sm:text-5xl
-              md:text-6xl
-              xl:text-[65px]
-              2xl:text-[80px]
-              font-bold 
-            text-purple-600 
-              text-nowrap"style={{
-                fontSize: 'clamp(2.3rem, 5vw, 5rem)',
-              }}>EN EL LUGAR</h1>
-              <h2 class="mb-1 
-              font-bold
-              text-white 
-              text-nowrap"style={{
-                fontSize: 'clamp(2.3rem, 5.200vw, 5.125rem)',
-              }}>QUE DESEAS</h2>
+              <AnimatedTitles />
             </div>
             <div className=" 
             flex flex-row 
