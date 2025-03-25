@@ -4,14 +4,12 @@ export function Navbar () {
       const [isOpen, setIsOpen] = useState(false);
     
       return (
-        <nav className="bg-gray-800">
+        <nav className="bg-transparent">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between h-16">
-              {/* Logo/Title */}
               <div className="flex-shrink-0">
-                <span className="text-white font-bold">Your Logo</span>
+                <span className="text-white font-bold"><img className="w-10" src="/images/faviconImagineWhite.png" alt="" /></span>
               </div>
-              
               {/* Desktop Menu (hidden on mobile) */}
               <div className="hidden md:block">
                 <div className="ml-10 flex items-baseline space-x-4">
