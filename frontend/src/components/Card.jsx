@@ -6,13 +6,11 @@ import { Check } from '../assets/check'
 export function Card(props) {
   const cardRef = useRef(null)
   
-  // 1. Configurar el seguimiento del scroll
   const { scrollYProgress } = useScroll({
     target: cardRef,
-    offset: ["0 1", "1 0"] // Animación cuando entra/sale del viewport
+    offset: ["0 1", "1 0"]
   })
 
-  // 2. Transformaciones basadas en scroll
   const scale = useTransform(scrollYProgress, [0, 1], [0.95, 1.20])
   const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [0.8, 1, 0.8])
   const y = useTransform(scrollYProgress, [0, 1], [20, -20])
