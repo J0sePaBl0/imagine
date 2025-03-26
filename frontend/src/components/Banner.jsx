@@ -16,13 +16,18 @@ export function Banner() {
     sm:w-1/2 
     flex-wrap-reverse
     flex-row"
-    initial={{ y: 100}}
+    initial={
+      {y: 100,
+      initial:"hidden"
+      }}
+    viewport={{ once: true }}
     animate={{ y: 0}}
     transition={{ 
       duration: 0.8,
       type: "spring",
-      stiffness: 50}}>
-
+      stiffness: 50}}
+    >
+      
         <div className="
         sm:min-w-50 
         flex flex-col 
