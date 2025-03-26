@@ -19,7 +19,6 @@ export function GoalsSection (){
     }, [sectionInView,card1InView]
          
     )
-
     const cardVariants = {
         hidden: { opacity: 0, y: 50 },
         visible: { opacity: 1, y: 0 }
@@ -28,7 +27,6 @@ export function GoalsSection (){
     return(
             <motion.div ref={section} className='mt-40 mb-50 flex flex-row md:w-2/3 w-4/5  flex-wrap md:justify-between justify-center'>
                 <Card ref={cardRef1} 
-                 
                 name = 'AMPLIAR PRESENCIA EN EL MERCADO' text = 'Ampliar la presencia en el mercado mediante la apertura de nuevas sucursales físicas y una plataforma de venta en línea para llegar a más clientes a nivel nacional e internacional.'/>
                 <Card ref={cardRef2}
                 initial="hidden"
