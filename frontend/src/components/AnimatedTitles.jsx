@@ -1,52 +1,54 @@
 "use client"
-import {motion, useAnimation } from "framer-motion"
+import {animate, motion, useAnimation, useAnimationFrame } from "framer-motion"
 import { useEffect } from "react"
 
 export default function AnimatedTitles() {
-  const controls = useAnimation()
-  
+  const controlsT1 = useAnimation({})
+  const controlsT2 = useAnimation({})
+  const controlsT3 = useAnimation({})
+
+
   useEffect(() => {
     const animateTitles = async () => {
-      await controls.start("revealed", { delay: 0.5 }) 
-      await controls.start("revealed", { delay: 2 })   
-      await controls.start("revealed", { delay: 4 })   
+      await controlsT1.start({
+        opacity:100,
+        transition: { duration: 1 }
+      })
+      await controlsT2.start({
+        opacity:100,
+        transition: { duration: 1 },
+      })  
+      await controlsT3.start({
+        opacity:100,
+        transition: { duration: 1 },
+      })  
     }
     animateTitles()
-  }, [controls])
+  })
 
-  const revealEffect = {
-    hidden: {
-      opacity: 0.3,
-      clipPath: 'inset(0 100% 0 0)' 
-    },
-    revealed: {
-      opacity: 1,
-      clipPath: 'inset(0 0 0 0)',   
-      transition: {
-        duration: 100,
-        
-      }
-    }
-  }
-
+ 
   return (
     <div className="flex flex-col items-center text-center">
       <motion.h4
         className="mb-1 w-auto text-nowrap font-bold text-gray-300 relative"
         style={{ fontSize: 'clamp(1.6rem, 3.400vw, 3.500rem)' }}
-        initial="hidden"
-        animate={controls}
-        variants={revealEffect}
+        animate={controlsT1}
+        initial={{
+          opacity:0
+        }}
+    
       >
-        EL ARTE QUE AMAS
+      EL ARTE QUE AMAS
       </motion.h4>
 
       <motion.h1 
         className="mb-1 w-auto text-4xl sm:text-5xl md:text-6xl xl:text-[65px] 2xl:text-[80px] font-bold text-purple-600 text-nowrap relative"
         style={{ fontSize: 'clamp(2.3rem, 5vw, 5rem)' }}
-        initial="hidden"
-        animate={controls}
-        variants={revealEffect}
+        animate={controlsT2}
+        initial={{
+          
+          opacity:0
+        }}
       >
         EN EL LUGAR
       </motion.h1>
@@ -54,11 +56,14 @@ export default function AnimatedTitles() {
       <motion.h2
         className="mb-1 font-bold text-white text-nowrap relative"
         style={{ fontSize: 'clamp(2.3rem, 5.200vw, 5.125rem)' }}
-        initial="hidden"
-        animate={controls}
-        variants={revealEffect}
-      >
-        QUE DESEAS
+        animate={controlsT3}
+        initial={{
+
+          opacity:0
+        }}
+        >
+          
+        QUE DESEAS 
       </motion.h2>
     </div>
   )
