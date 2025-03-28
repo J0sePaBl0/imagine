@@ -1,5 +1,5 @@
 "use client"
-import { easeOut, motion, useAnimation } from "framer-motion"
+import {motion, useAnimation } from "framer-motion"
 import { useEffect } from "react"
 
 export default function AnimatedTitles() {
@@ -23,8 +23,8 @@ export default function AnimatedTitles() {
       opacity: 1,
       clipPath: 'inset(0 0 0 0)',   
       transition: {
-        duration: 40,
-        ease:"easeIn"
+        duration: 100,
+        
       }
     }
   }

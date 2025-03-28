@@ -98,9 +98,13 @@ export function Banner() {
           hover:shadow-purple-600/100
             transition-shadow 
             duration-400"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 3 }}
+            initial={{ y: -15,scale:1 }}
+            animate={{ y: 15, opacity: 90 }}
+            transition={{
+              duration: 1,
+              repeat: Infinity,
+              repeatType: "reverse",
+              ease: "easeInOut"}}
             src="/images/Goku.jpg" alt=""></motion.img>
         </div>
     </motion.div>
