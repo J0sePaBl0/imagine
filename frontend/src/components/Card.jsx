@@ -11,15 +11,7 @@ export function Card(props) {
     offset: ["0 1", "1 0"]
   })
 
-  const hovered = {
-    y: 80,
-    transition: { 
-      duration: 0.3,
-      ease: "easeOut"
-    }
-  } 
-
-  const scale = useTransform(scrollYProgress, [0, 1], [0.80, 1.10])
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.10])
   
   const y = useTransform(scrollYProgress, [0, 1], [-60, 80])
 
@@ -27,7 +19,6 @@ export function Card(props) {
     <motion.div
       ref={cardRef}
       className="my-5 md:my-10 flex group border border-blue-800 md:flex-row relative w-70 h-auto overflow-hidden rounded-[16px] bg-gray-300 p-[1px] transition-all duration-300 ease-in-out hover:bg-gradient-to-r hover:from-indigo-500 hover:via-purple-500 hover:to-pink-500"
-      whileHover={hovered}
       style={{
         scale,
         y

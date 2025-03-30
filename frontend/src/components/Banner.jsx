@@ -10,7 +10,7 @@ export function Banner() {
     <motion.div 
     className="flex mx-auto
     lg:w-2/3 
-    mt-10 
+    mt-10
     md:mt-10
     w-1/2 
     sm:w-1/2 
