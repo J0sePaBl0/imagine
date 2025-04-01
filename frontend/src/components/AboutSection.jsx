@@ -2,7 +2,7 @@ export function AboutSection (){
     return(
     
         <div className="w-2/3 min-h-fit flex flex-col mb-20">
-            <h1 className="text-pink-600 mb-2 md:mb-10"style={{
+            <h1 className="text-purple-600 mb-2 md:mb-10"style={{
                 fontSize: 'clamp(2rem, 5.200vw, 3rem)',
               }}>
             Imagine

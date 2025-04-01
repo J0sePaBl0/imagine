@@ -42,7 +42,7 @@ export function Banner() {
         xl:items-start
         2xl:items-start
         2xl:justify-items-start">
-          <div className="border border-amber-400
+          <div className="
             w-full
             md:w-4/5
             xl:w-4/5
@@ -76,7 +76,7 @@ export function Banner() {
                 </div>
             </div>
         </div>
-        <div class="flex flex-col border border-blue-600
+        <div class="flex flex-col
         w-full
         lg:w-1/3 
         py-5
