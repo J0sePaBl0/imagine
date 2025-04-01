@@ -23,16 +23,13 @@ export function GoalsSection (){
     
     return(
             <motion.div ref={section} className='mt-50 mb-60 flex flex-row md:w-2/3 w-4/5  flex-wrap md:gap-10 justify-center'>
-                <motion.div ref={cardRef1} style={{
-                x
-                }}>
+                <motion.div ref={cardRef1} >
                 <Card
                 name = 'AMPLIAR PRESENCIA EN EL MERCADO' text = 'Ampliar la presencia en el mercado mediante la apertura de nuevas sucursales físicas y una plataforma de venta en línea para llegar a más clientes a nivel nacional e internacional.'/>
                 </motion.div>
-                <motion.div ref={cardRef2} style={!isMobile ? { y,x } : undefined}>
+                <motion.div ref={cardRef2} style={!isMobile ? {y} : undefined }>
                 <Card 
                 name = 'PROMOVER EL TALENTO LOCAL' text = 'Colaborando con artistas emergentes y consagrados, ofreciendo sus obras en nuestra galería y organizando exposiciones exclusivas'
-                
                 />
                 </motion.div>
                 <motion.div ref={cardRef3}>
