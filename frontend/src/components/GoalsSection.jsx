@@ -22,7 +22,7 @@ export function GoalsSection (){
 
     
     return(
-            <motion.div ref={section} className='lg:mt-60 mt-10 mb-60 flex flex-row md:w-2/3 w-4/5 flex-wrap md:gap-10 justify-center'>
+            <motion.div ref={section} className='border border-amber-400 xl:mt-70 lg:mt-50 mt-15 md:mb-60 mb-20 flex flex-row md:w-2/3 w-4/5 flex-wrap md:gap-10 justify-center'>
                 <motion.div ref={cardRef1} >
                 <Card
                 name = 'AMPLIAR PRESENCIA EN EL MERCADO' text = 'Ampliar la presencia en el mercado mediante la apertura de nuevas sucursales físicas y una plataforma de venta en línea para llegar a más clientes a nivel nacional e internacional.'/>

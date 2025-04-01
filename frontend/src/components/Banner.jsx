@@ -12,7 +12,7 @@ export function Banner() {
     lg:w-2/3 
     mt-10
     md:mt-10
-    w-1/2 
+    w-4/5 
     sm:w-1/2 
     flex-wrap-reverse
     flex-row"
@@ -42,8 +42,8 @@ export function Banner() {
         xl:items-start
         2xl:items-start
         2xl:justify-items-start">
-          <div className="
-            w-3/5
+          <div className="border border-amber-400
+            w-full
             md:w-4/5
             xl:w-4/5
             sm:w-full 
@@ -60,7 +60,7 @@ export function Banner() {
             md:w-4/5
             sm:w-5/6
             sm:mt-5
-            w-5/6
+            w-4/5
             md:justify-items-start 
             justify-center
             pb-5">
@@ -76,7 +76,7 @@ export function Banner() {
                 </div>
             </div>
         </div>
-        <div class="flex flex-col 
+        <div class="flex flex-col border border-blue-600
         w-full
         lg:w-1/3 
         py-5
@@ -93,7 +93,7 @@ export function Banner() {
             lg:max-w-100
             md:max-w-80 
             sm:w-75
-            w-60
+            w-80
             hover:shadow-lg 
           hover:shadow-purple-600/100
             transition-shadow 

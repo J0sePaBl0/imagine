@@ -31,7 +31,7 @@ export default function AnimatedTitles() {
     <div className="flex flex-col items-center text-center">
       <motion.h4
         className="mb-1 w-auto text-nowrap font-bold text-gray-300 relative"
-        style={{ fontSize: 'clamp(1.6rem, 3.400vw, 3.500rem)' }}
+        style={{ fontSize: 'clamp(2.3rem, 3.400vw, 3.500rem)' }}
         animate={controlsT1}
         initial={{
           opacity:0
@@ -43,7 +43,7 @@ export default function AnimatedTitles() {
 
       <motion.h1 
         className="mb-1 w-auto text-4xl sm:text-5xl md:text-6xl xl:text-[65px] 2xl:text-[80px] font-bold text-purple-600 text-nowrap relative"
-        style={{ fontSize: 'clamp(2.3rem, 5vw, 5rem)' }}
+        style={{ fontSize: 'clamp(3.4rem, 5vw, 5rem)' }}
         animate={controlsT2}
         initial={{
           
@@ -55,7 +55,7 @@ export default function AnimatedTitles() {
 
       <motion.h2
         className="mb-1 font-bold text-white text-nowrap relative"
-        style={{ fontSize: 'clamp(2.3rem, 5.200vw, 5.125rem)' }}
+        style={{ fontSize: 'clamp(3rem, 5.200vw, 5.125rem)' }}
         animate={controlsT3}
         initial={{
 
