@@ -18,6 +18,7 @@ export function GoalsSection (){
     const y = useTransform(
         scrollYProgress, [0, 1], [-80,120]
     )
+    
     const x = useTransform(scrollYProgress, [0,1],[0,80])
 
     

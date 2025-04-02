@@ -21,7 +21,7 @@ export default function AnimatedTitles() {
       await controlsT3.start({
         opacity:100,
         transition: { duration: 1 },
-      })  
+      })
     }
     animateTitles()
   })
@@ -46,10 +46,8 @@ export default function AnimatedTitles() {
         style={{ fontSize: 'clamp(3.4rem, 5vw, 5rem)' }}
         animate={controlsT2}
         initial={{
-          
-          opacity:0
-        }}
-      >
+        opacity:0
+        }}>
         EN EL LUGAR
       </motion.h1>
 
