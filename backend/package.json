@@ -1,0 +1,36 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "imagine server ",
+  "main": "app.js",
+  "scripts": {
+    "start": "node src/app.js",     
+    "dev": "nodemon src/app.js",   
+    "test": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/J0sePaBl0/imagine.git"
+  },
+  "keywords": [
+    "\"keywords\":",
+    "[\"payments\"",
+    "\"inventory\"",
+    "\"authentication\"",
+    "\"jwt\"]"
+  ],
+  "author": "JosePablo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/J0sePaBl0/imagine/issues"
+  },
+  "homepage": "https://github.com/J0sePaBl0/imagine#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}

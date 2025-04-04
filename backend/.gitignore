@@ -1,0 +1,49 @@
+# Archivos y directorios generados por Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Variables de entorno (nunca subir credenciales)
+.env
+.env.local
+.env.*.local
+
+# Archivos de configuración de IDE/Editores
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Archivos de depuración y logs
+logs/
+*.log
+.pnpm-debug.log
+
+# Archivos de cobertura de tests
+coverage/
+.nyc_output/
+
+# Archivos de compilación (si usas TypeScript/Babel)
+dist/
+build/
+*.tsbuildinfo
+
+# Base de datos local (si usas SQLite o similar)
+*.db
+*.sqlite
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Archivos de npm/yarn
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Archivos de caché
+.cache/
+.temp/
