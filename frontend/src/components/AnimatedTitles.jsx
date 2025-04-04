@@ -12,15 +12,15 @@ export default function AnimatedTitles() {
     const animateTitles = async () => {
       await controlsT1.start({
         opacity:100,
-        transition: { duration: 1 }
+        transition: { duration: 0.5 }
       })
       await controlsT2.start({
         opacity:100,
-        transition: { duration: 1 },
+        transition: { duration: 0.5 },
       })  
       await controlsT3.start({
         opacity:100,
-        transition: { duration: 1 },
+        transition: { duration: 0.5 },
       })
     }
     animateTitles()
