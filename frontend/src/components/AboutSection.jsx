@@ -16,7 +16,7 @@ export function AboutSection (){
  
 
     return(
-        <motion.div ref={section} className="w-2/3 min-h-fit flex lg:mt-30 flex-col mb-35 2xl:mb-50">
+        <motion.div ref={section} className="w-2/3 min-h-fit flex 2xl:mt-30 flex-col mb-35 2xl:mb-50">
             <motion.h1 ref={titulo} className="text-purple-600 mb-2 md:mb-10" style={{
           opacity,y,scale,
           fontSize: 'clamp(2rem, 5.200vw, 3rem)'
