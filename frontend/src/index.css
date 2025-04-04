@@ -4,7 +4,11 @@
     --color-regal-blue: #243c5a;
     
 }
-
+@layer base {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
 
 body {
     background: rgb(40,20,83);
