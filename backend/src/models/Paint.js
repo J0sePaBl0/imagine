@@ -1,7 +1,7 @@
 const pool = require('../database/db');
 
 const getAllPaints = async () => {
-  const query = 'SELECT * FROM products';
+  const query = 'SELECT * FROM paints';
   const { rows } = await pool.query(query);
   return rows;
 };
