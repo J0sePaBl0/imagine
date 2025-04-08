@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const paintRoutes = require('./routes/paintRoutes');
 require('dotenv').config();
 
 const app = express();
@@ -7,9 +8,7 @@ const app = express();
 app.use(cors()); 
 app.use(express.json());
 
-app.get('/', (req, res) => {
-  res.send('¡Backend del eCommerce funcionando!');
-});
+app.use('/api/paints', paintRoutes);
 
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
