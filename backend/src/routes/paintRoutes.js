@@ -12,13 +12,11 @@ router.get('/', async (req, res) => {
   }
 });
 
-// POST /api/products
 router.post('/', async (req, res) => {
   const { nombre, descripcion, categoria, precio, imagen } = req.body;
   try {
     const newPaint = await createPaint(nombre, descripcion, categoria, precio, imagen);
     res.status(201).json(newPaint);
-    console.log("Si entra")
   } catch (error) {
     res.status(500).send('Error al crear producto');
   }
