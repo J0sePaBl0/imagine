@@ -7,8 +7,9 @@ getAllUsers = async () =>{
 }
 
 createUser = async (name, password, address) =>{
-    const query = 'INSERT INTO users (name, password, address) VALUES ($1, $2, $3)';
+    const query = 'INSERT INTO users (name, password, address) VALUES ($1, $2, $3) RETURNING *';
     const values = [name, password, address]
     const { rows } = await pool.query(query,values);
     return rows
 }
+module.exports = { getAllUsers, createUser };
