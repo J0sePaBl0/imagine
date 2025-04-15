@@ -23,4 +23,8 @@ updateUser = async (id, name, password, address)=>{
     const {rows} = await pool.query(query,values);
     return rows [0];
 }
+
+
+
+
 module.exports = { getAllUsers, createUser, updateUser };
