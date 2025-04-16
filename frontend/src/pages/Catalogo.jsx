@@ -1,9 +1,7 @@
-import { Navbar } from '../components/Navbar'
+import { Layout } from '../layouts/Layout'
 export function Catalogo (){
     
     return(
-        <div class="flex flex-col justify-center items-center">
-            <Navbar />
-        </div>
+        <h1>Hola</h1>
     )
 }
