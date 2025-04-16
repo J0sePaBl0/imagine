@@ -20,7 +20,7 @@ export function Navbar() {
           <div className="hidden md:block">
             <div className="ml-10 flex items-center space-x-4">
               <motion.a 
-              href="#" 
+              href="/" 
               className="text-gray-300 hover:text-white px-3 py-2 rounded-md 
               text-sm font-medium transition-colors"
               whileHover={{ scale: 1.1, 

@@ -1,8 +1,9 @@
+import { Navbar } from '../components/Navbar'
 export function Catalogo (){
-
+    
     return(
-        <div className=" bg-blue-800 border border-amber-400">
-            
+        <div class="flex flex-col justify-center items-center">
+            <Navbar />
         </div>
     )
 }
