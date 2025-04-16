@@ -1,7 +1,7 @@
 "use client"
 import { useState } from "react"
 import { motion } from "framer-motion"
-import { ShoppingCart, User } from "lucide-react" // Instala con: npm install lucide-react
+import { ShoppingCart, User } from "lucide-react" 
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -30,7 +30,7 @@ export function Navbar() {
               </motion.a>
 
               <motion.a 
-              href="#" 
+              href="/catalogo" 
               className="text-gray-300 
               hover:text-white px-3 py-2 
               rounded-md text-sm font-medium 
@@ -42,7 +42,7 @@ export function Navbar() {
                 Catálogo
               </motion.a>
               <motion.a 
-              href="#" 
+              href="" 
               className="text-gray-300 
               hover:text-white px-3 py-2 
               rounded-md text-sm font-medium 
@@ -68,7 +68,7 @@ export function Navbar() {
               {/* Carrito y Perfil (Desktop) */}
               <div className="flex items-center ml-4 space-x-3">
                 <motion.a 
-                  href="/carrito"
+                  href=""
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
                   className="text-gray-300 hover:text-white p-2 relative"
