@@ -35,7 +35,7 @@ export function Catalogo (){
         <div className='h-96 flex flex-row w-6/7 mt-10'>
             <div className='border rounded-2xl border-purple-800 w-1/4 h-full '>
                 
-                <div className='h-full  bg-transparent z-0'>
+                <div className='h-full  bg-gray-950/ z-0'>
                     <ul>
                         <li><a className='text-white' href="">Arte abstracta</a></li>
                         <li><a className='text-white z-10' href="">Arte abstracta</a></li>
@@ -44,8 +44,8 @@ export function Catalogo (){
                     </ul>
                 </div>
             </div>
-            <div className=' rounded-2xl h-full w-3/4 ml-5 border border-purple-800'>
-                <div className=' bg-indigo-950 p-10 rounded-2xl flex flex-row flex-wrap'>
+            <div className=' rounded-2xl w-3/4 ml-5 border border-purple-800'>
+                <div className='bg-gray-950/60 p-10 rounded-2xl flex flex-row flex-wrap'>
                     
                     {paints.map(paint => (
                         
