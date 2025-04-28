@@ -1,5 +1,5 @@
 import { Layout } from '../layouts/Layout'
-import { Card } from '../components/Card'
+import { PaintCard } from '../components/PaintCard'
 import { useState, useEffect } from 'react';
 
 export function Catalogo (){
@@ -45,18 +45,12 @@ export function Catalogo (){
                 </div>
             </div>
             <div className=' rounded-2xl h-full w-3/4 ml-5 border border-purple-800'>
-                <div className='h-full bg-gray-400'>
+                <div className=' bg-indigo-950 p-10 rounded-2xl flex flex-row flex-wrap'>
+                    
                     {paints.map(paint => (
-                    <div className="h-48 overflow-hidden">
-                    <img 
-                      src={paint.imagen} 
-                      alt={paint.nombre}
-                      className="w-full h-full object-cover"
-                    />
-                    <div key={paint.id}>
-                    <h3 className='text-white'>{paint.nombre}</h3>
-                    <p>${paint.precio}</p>
-                    </div>
+                        
+                    <div className="">
+                        <PaintCard image = {paint.imagen} price = {paint.precio} name = {paint.nombre} descripcion = {paint.descripcion} />
                     </div>
                 ))}
                 </div>
