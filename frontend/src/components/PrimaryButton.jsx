@@ -2,7 +2,7 @@ export function PrimaryButton (props) {
     return (
         <button type="button" class="
                         text-white
-                        w-1/2 
+                        w-full 
                         bg-gradient-to-r 
                         from-purple-500 
                         via-purple-600 
