@@ -10,7 +10,7 @@ return(
                 <img className="object-scale-down w-full h-60" src={props.image} alt="" />
             </div>
             <h1 className="text-white p-4">{props.price} colones</h1>
-            <div className="flex justify-center relative bottom-1">
+            <div className="flex justify-center relative bottom-5 mt-5">
                     <div className="gap-2 flex w-full absolute justify-center items-center">
                         <div className="w-3/4">
                          <PrimaryButton name = "Ver cuadro"></PrimaryButton>
