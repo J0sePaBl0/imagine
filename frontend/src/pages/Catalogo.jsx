@@ -44,8 +44,8 @@ export function Catalogo (){
                     </ul>
                 </div>
             </div>
-            <div className=' rounded-2xl w-3/4 ml-5 border border-purple-800'>
-                <div className='bg-gray-950/60 p-10 rounded-2xl flex flex-row flex-wrap'>
+            <div className=' rounded-2xl w-3/4 ml-5 '> 
+                <div className='bg-gray-950/60 p-10 border border-purple-800 rounded-2xl flex flex-row flex-wrap'>
                     
                     {paints.map(paint => (
                         

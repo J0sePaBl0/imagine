@@ -1,3 +1,4 @@
+import { PrimaryButton } from "./PrimaryButton"
 export function PaintCard (props){
 
 return(
@@ -9,6 +10,7 @@ return(
             <h1>{props.price}</h1>
             <h1>{props.name}</h1>
             <p>{props.description}</p>
+            <PrimaryButton name = "carrito"></PrimaryButton>
         </div>
     </div>
 )

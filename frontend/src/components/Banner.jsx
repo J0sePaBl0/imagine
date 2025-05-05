@@ -71,8 +71,8 @@ export function Banner() {
               sm:w-full
               w-full
               md:justify-items-end">
-                  <SecundaryButton />
-                  <PrimaryButton />
+                  <SecundaryButton name = "Catálogo" />
+                  <PrimaryButton name = "Ver cuadro"/>
                 </div>
             </div>
         </div>

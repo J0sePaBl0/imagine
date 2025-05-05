@@ -1,4 +1,4 @@
-export function SecundaryButton(){
+export function SecundaryButton(props){
     return(
         <button class="relative 
                   w-1/2 
@@ -28,7 +28,7 @@ export function SecundaryButton(){
                     rounded-md 
                     text-sm
                     text-nowrap">
-                    Ver catálogo
+                    {props.name}
                   </span>
                   </button>
     )

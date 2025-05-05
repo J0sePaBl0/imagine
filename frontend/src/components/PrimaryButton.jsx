@@ -1,4 +1,4 @@
-export function PrimaryButton () {
+export function PrimaryButton (props) {
     return (
         <button type="button" class="
                         text-white
@@ -31,7 +31,7 @@ export function PrimaryButton () {
                             rounded-md 
                             text-sm
                             text-nowrap">
-                            Ver cuadro
+                            {props.name}
                             </span>
                         </button>
 
