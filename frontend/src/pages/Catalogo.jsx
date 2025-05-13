@@ -37,7 +37,7 @@ export function Catalogo (){
                 
                 <div className='h-full  bg-gray-950/ z-0'>
                     <ul >
-                        <li className='bg-gray-950/60 p-5 pl-10 m-5 rounded-3xl'><a className='text-white' href="">Super Heroes</a></li>
+                        <li className='bg-gray-950/60 p-5 pl-10 m-5 rounded-3xl'><button className='text-white' href="">Super Heroes</button></li>
                         <li className='bg-gray-950/60 p-5 pl-10 m-5 rounded-3xl'><a className='text-white' href="">Arte abstracta</a></li>
                         <li className='bg-gray-950/60 p-5 pl-10 m-5 rounded-3xl'><a className='text-white' href="">Anime</a></li>
                         <li className='bg-gray-950/60 p-5 pl-10 m-5 rounded-3xl'><a className='text-white' href="">Elegante</a></li>

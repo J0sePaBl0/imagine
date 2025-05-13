@@ -16,13 +16,11 @@ return(
                          <PrimaryButton name = "Ver cuadro"></PrimaryButton>
                         </div>
                         <div className="border border-purple-600 bg-black rounded-3xl w-1/4 h-12 flex justify-center items-center">
-                        <ShoppingCart size={20} color="white"/>
-                        <span>
-
-                        </span>
+                            <ShoppingCart size={20} color="white"/>
+                            <span>
+                            
+                            </span>
                         </div>
-                                               
-                    
                     </div>
             </div>
            
