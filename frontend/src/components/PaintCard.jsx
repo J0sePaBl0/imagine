@@ -15,12 +15,12 @@ return(
                         <div className="w-3/4">
                          <PrimaryButton name = "Ver cuadro"></PrimaryButton>
                         </div>
-                        <div className="border border-purple-600 bg-black rounded-3xl w-1/4 h-12 flex justify-center items-center">
+                        <button className="border border-purple-600 bg-black rounded-3xl w-1/4 h-12 flex justify-center items-center">
                             <ShoppingCart size={20} color="white"/>
                             <span>
-                            
+
                             </span>
-                        </div>
+                        </button>
                     </div>
             </div>
            

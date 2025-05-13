@@ -85,14 +85,42 @@ export function Navbar() {
                   )}
                 </motion.a>
 
-                <motion.a
-                  href="/perfil"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="text-gray-300 hover:text-white p-2"
-                >
-                  <User size={20} />
-                </motion.a>
+                <div className="relative">
+                  <motion.button
+                    onClick={() => setIsOpen(!isOpen)}
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="text-gray-300 hover:text-white p-2"
+                  >
+                    <User size={20} />
+                  </motion.button>
+
+                  {/* Dropdown menu */}
+                  {isOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      transition={{ duration: 0.2 }}
+                      className="absolute right-0 mt-2 w-48 bg-gray-800 rounded-md shadow-lg z-10"
+                    >
+                      <div className="py-1">
+                        <a
+                          href="/registro"
+                          className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white"
+                        >
+                          Registrarse
+                        </a>
+                        <a
+                          href="/login"
+                          className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white"
+                        >
+                          Iniciar sesión
+                        </a>
+                      </div>
+                    </motion.div>
+                  )}
+                </div>
               </div>
             </div>
           </div>
