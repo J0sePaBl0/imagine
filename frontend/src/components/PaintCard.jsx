@@ -4,7 +4,7 @@ import { PrimaryButton } from "./PrimaryButton"
 export function PaintCard (props){
 
 return(
-    <div className=" w-50 flex flex-col bg-gray-900 m-5 mb-15">
+    <div className=" w-50 flex flex-col bg-gray-900 m-5 mb-15  ">
         <div className=" h-2/3 ">
             <div className="flex justify-center">
                 <img className="object-scale-down w-full h-60" src={props.image} alt="" />

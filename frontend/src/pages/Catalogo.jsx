@@ -32,15 +32,21 @@ export function Catalogo (){
   if (error) return <div>Error: {error}</div>;
 
     return(
-        <div className='h-96 flex flex-row w-6/7 mt-10'>
-            <div className='border rounded-2xl border-purple-800 w-1/4 h-full '>
+        <div className=' flex flex-row w-6/7 mt-10'>
+            <div className='border rounded-2xl border-purple-800 w-1/4 '>
                 
                 <div className='h-full  bg-gray-950/ z-0'>
-                    <ul>
-                        <li><a className='text-white' href="">Arte abstracta</a></li>
-                        <li><a className='text-white z-10' href="">Arte abstracta</a></li>
-                        <li><a className='text-blue-300' href="">Arte abstracta</a></li>
-                        <li><a className='text-blue-300' href="">Arte abstracta</a></li>
+                    <ul >
+                        <li className='bg-gray-950/60 p-5 pl-10 m-5 rounded-3xl'><a className='text-white' href="">Super Heroes</a></li>
+                        <li className='bg-gray-950/60 p-5 pl-10 m-5 rounded-3xl'><a className='text-white' href="">Arte abstracta</a></li>
+                        <li className='bg-gray-950/60 p-5 pl-10 m-5 rounded-3xl'><a className='text-white' href="">Anime</a></li>
+                        <li className='bg-gray-950/60 p-5 pl-10 m-5 rounded-3xl'><a className='text-white' href="">Elegante</a></li>
+                        <li className='bg-gray-950/60 p-5 pl-10 m-5 rounded-3xl'><a className='text-white' href="">Niños</a></li>
+                        <li className='bg-gray-950/60 p-5 pl-10 m-5 rounded-3xl'><a className='text-white' href="">Animales</a></li>
+                        <li className='bg-gray-950/60 p-5 pl-10 m-5 rounded-3xl'><a className='text-white' href="">Fantasía</a></li>
+                        <li className='bg-gray-950/60 p-5 pl-10 m-5 rounded-3xl'><a className='text-white' href="">Películas</a></li>
+                        <li className='bg-gray-950/60 p-5 pl-10 m-5 rounded-3xl'><a className='text-white' href="">Terror</a></li>
+                        <li className='bg-gray-950/60 p-5 pl-10 m-5 rounded-3xl'><a className='text-white' href="">Realismo</a></li>
                     </ul>
                 </div>
             </div>
