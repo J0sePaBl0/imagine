@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { getAllUsers, createUser, updateUser } = require('../models/Users');
+const { getAllUsers, createUser, updateUser, getUserById } = require('../models/Users');
 
 router.get('/', async (req,res)=>{
     try{
@@ -8,6 +8,19 @@ router.get('/', async (req,res)=>{
         res.json(users);
     }catch (error){
         res.status(500).send('error al obtener usuarios')
+    }
+});
+
+router.get('/getById', async (req,res)=>{
+    try {
+        const { id } = req.query
+        const user = await getUserById(id);
+        if (!user) {
+        return res.status(404).json({ error: 'Usuario no encontrado' });
+        }
+        res.json(user);
+    } catch (error) {
+        res.status(500).send('error al obtener usuario')
     }
 });
 

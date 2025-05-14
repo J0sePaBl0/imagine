@@ -8,11 +8,10 @@ const pool = new Pool({
     password: process.env.DB_PASSWORD,
     port: process.env.DB_PORT,
     ssl: {
-      rejectUnauthorized: false // Obligatorio para Railway
+      rejectUnauthorized: false
     }
 });
 
-// Verificar la conexión
 pool.query('SELECT NOW()', (err, res) => {
   if (err) console.error('Error al conectar a PostgreSQL:', err);
   else console.log('PostgreSQL conectado en:', res.rows[0].now);
