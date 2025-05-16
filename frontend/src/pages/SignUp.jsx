@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-export function SignIn() {
+export function SignUp() {
   const [formData, setFormData] = useState({
     username: '',
     email: '',
