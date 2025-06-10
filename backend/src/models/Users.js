@@ -2,10 +2,9 @@ const supabase = require('../database/db');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
-// Create a new user
 const createUser = async (name, email, password, address) => {
     try {
-        // Check if user already exists
+       
         const { data: existingUser, error: existingError } = await supabase
             .from('users')
             .select('*')
@@ -16,10 +15,8 @@ const createUser = async (name, email, password, address) => {
             throw new Error('User already exists');
         }
 
-        // Hash password
         const hashedPassword = await bcrypt.hash(password, 10);
 
-        // Create user in database
         const { data, error } = await supabase
             .from('users')
             .insert([
