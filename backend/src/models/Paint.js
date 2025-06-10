@@ -1,4 +1,4 @@
-const pool = require('../database/db');
+/*const pool = require('../database/db');
 
 const getAllPaints = async () => {
   const query = 'SELECT * FROM paints';
@@ -30,4 +30,4 @@ const getPaintById = async (id) => {
   return rows[0];
 }
 
-module.exports = { getAllPaints, createPaint, updatePaint, getPaintById };
+module.exports = { getAllPaints, createPaint, updatePaint, getPaintById };*/

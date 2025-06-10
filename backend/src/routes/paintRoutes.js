@@ -1,4 +1,4 @@
-const express = require('express');
+/*const express = require('express');
 const router = express.Router();
 const { getAllPaints, createPaint, updatePaint, getPaintById } = require('../models/Paint');
 
@@ -47,4 +47,4 @@ router.post('/updatePaint', async (req,res)=>{
 
 
 
-module.exports = router;
+module.exports = router;*/

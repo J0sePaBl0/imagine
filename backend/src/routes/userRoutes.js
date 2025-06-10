@@ -1,47 +1,60 @@
 const express = require('express');
 const router = express.Router();
-const { getAllUsers, createUser, updateUser, getUserById } = require('../models/Users');
+const { createUser, loginUser, getUserById } = require('../models/Users');
 
-router.get('/', async (req,res)=>{
-    try{
-        const users = await getAllUsers();
-        res.json(users);
-    }catch (error){
-        res.status(500).send('error al obtener usuarios')
+// Register a new user
+router.post('/', async (req, res) => {
+    const { name, email, password, address } = req.body;
+
+    if (!email || !password) {
+        return res.status(400).json({ 
+            error: 'Email and password are required' 
+        });
+    }
+
+    try {
+        const newUser = await createUser(name, email, password, address);
+        res.status(201).json(newUser);
+    } catch (error) {
+        console.error('User creation error:', error);
+        res.status(500).json({ 
+            error: error.message || 'Failed to create user' 
+        });
+    }
+});
+/*
+// Login user
+router.post('/login', async (req, res) => {
+    const { email, password } = req.body;
+
+    if (!email || !password) {
+        return res.status(400).json({ 
+            error: 'Email and password are required' 
+        });
+    }
+
+    try {
+        const user = await loginUser(email, password);
+        res.json(user);
+    } catch (error) {
+        console.error('Login error:', error);
+        res.status(401).json({ 
+            error: error.message || 'Login failed' 
+        });
     }
 });
 
-router.get('/getById', async (req,res)=>{
+// Get user by ID (protected route)
+router.get('/:id', async (req, res) => {
     try {
-        const { id } = req.query
-        const user = await getUserById(id);
+        const user = await getUserById(req.params.id);
         if (!user) {
-        return res.status(404).json({ error: 'Usuario no encontrado' });
+            return res.status(404).json({ error: 'User not found' });
         }
         res.json(user);
     } catch (error) {
-        res.status(500).send('error al obtener usuario')
+        res.status(500).json({ error: 'Error getting user' });
     }
 });
-
-router.post('/', async (req,res)=>{
-    const { name, password, address } = req.body
-    try {
-        const newUser = await createUser(name, password, address);
-        res.status(201).json(newUser)
-    } catch (error) {
-        res.status(500).send('error al crear usuario')
-    }
-});
-
-router.post('/updateUser', async (req,res)=>{
-    const { id, name, password, address } = req.body;
-    try{
-      const editUser = await updateUser(id,name,password,address)
-      res.status(201).json(editUser)
-    }catch(error){
-        res.status(500).send('error al actualizar usuario')
-    }
-  });
-
+*/
 module.exports = router;
