@@ -1,77 +1,69 @@
+const { SupabaseClient } = require('@supabase/supabase-js');
 const supabase = require('../database/db');
-const bcrypt = require('bcryptjs');
-const jwt = require('jsonwebtoken');
 
-const createUser = async (name, email, password, address) => {
-    try {
-       
-        const { data: existingUser, error: existingError } = await supabase
-            .from('users')
-            .select('*')
-            .eq('email', email)
-            .single();
 
-        if (existingUser) {
-            throw new Error('User already exists');
+const createUser = async (userData) => {
+    try{
+        const { data, error } = await supabase.from('users').insert(userData).select();
+        if (error) {
+            throw new Error(`Supabase error: ${error.message}`);
         }
+        return data [0];
+    }catch (err){
+        console.error("Error creating user:", err.message);
+        console.error("User creation failed:", {
+        message: err.message,
+        code: err.code, 
+        details: err.details
+    });
+    throw new Error(`Failed to create user: ${err.message}`);
+    }
+};
 
-        const hashedPassword = await bcrypt.hash(password, 10);
-
-        const { data, error } = await supabase
-            .from('users')
-            .insert([
-                { 
-                    name, 
-                    email, 
-                    password: hashedPassword, 
-                    address 
-                }
-            ])
-            .select();
-
-        if (error) throw error;
+const createAuthUser = async (email, password) => {
+    try{
+    const {data, error} = await supabase.auth.signUp({
+        email,
+        password,
         
-        return data[0];
-    } catch (error) {
-        throw error;
-    }
+      });
+      if (error) throw error;
+
+      return data.user.id;
+      }catch(err){
+        console.error("Error creating auth user", err.message);
+        throw err;
+      }
 };
 
-/* Login user
+
+ //Login user
 const loginUser = async (email, password) => {
-    try {
-        // Find user by email
-        const { data: user, error } = await supabase
-            .from('users')
-            .select('*')
-            .eq('email', email)
-            .single();
+          try {
+    const { data, error } = await supabase.auth.signInWithPassword({
+      email,
+      password
+    });
 
-        if (error || !user) {
-            throw new Error('Invalid credentials');
-        }
+    if (error) throw error;
 
-        // Compare passwords
-        const isMatch = await bcrypt.compare(password, user.password);
-        if (!isMatch) {
-            throw new Error('Invalid credentials');
-        }
+    // Get additional user data from your custom table if needed
+    const { data: userData } = await supabase
+      .from('users')
+      .select('*')
+      .eq('id', data.user.id)
+      .single();
 
-        // Generate JWT token
-        const token = jwt.sign(
-            { id: user.id, email: user.email },
-            process.env.JWT_SECRET,
-            { expiresIn: '1h' }
-        );
-
-        // Return user data without password and with token
-        const { password: _, ...userWithoutPassword } = user;
-        return { ...userWithoutPassword, token };
-    } catch (error) {
-        throw error;
-    }
+    return {
+      ...data.user,
+      ...userData,
+      session: data.session
+    };
+  } catch (error) {
+    throw error;
+  }
 };
-
+/*
 // Get user by ID
 const getUserById = async (id) => {
     try {
@@ -90,6 +82,7 @@ const getUserById = async (id) => {
 */
 module.exports = {
     createUser,
-    //loginUser,
+    loginUser,
+    createAuthUser
     //getUserById
 };

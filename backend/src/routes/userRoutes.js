@@ -1,48 +1,40 @@
 const express = require('express');
 const router = express.Router();
-const { createUser, loginUser, getUserById } = require('../models/Users');
+const { createUser, loginUser, getUserById,createAuthUser } = require('../models/Users');
 
-router.post('/', async (req, res) => {
-    const { name, email, password, address } = req.body;
-
-    if (!email || !password) {
-        return res.status(400).json({ 
-            error: 'Email and password are required' 
-        });
-    }
-
+router.post('/signup', async (req, res) => {
     try {
-        const newUser = await createUser(name, email, password, address);
-        res.status(201).json(newUser);
+        const { name, email, password, address } = req.body;
+        const authId = await createAuthUser(email,password);
+        await createUser({auth_id: authId, name, email, address});
+        res.status(200).send("Succesfully signed user up");
     } catch (error) {
         console.error('User creation error:', error);
-        res.status(500).json({ 
-            error: error.message || 'Failed to create user' 
-        });
+        res.status(400).send("Failed to sign user up")
     }
 });
-/*
+
 // Login user
 router.post('/login', async (req, res) => {
     const { email, password } = req.body;
 
-    if (!email || !password) {
-        return res.status(400).json({ 
-            error: 'Email and password are required' 
-        });
-    }
+  if (!email || !password) {
+    return res.status(400).json({ 
+      error: 'Email and password are required' 
+    });
+  }
 
-    try {
-        const user = await loginUser(email, password);
-        res.json(user);
-    } catch (error) {
-        console.error('Login error:', error);
-        res.status(401).json({ 
-            error: error.message || 'Login failed' 
-        });
-    }
+  try {
+    const result = await loginUser(email, password);
+    res.json(result);
+  } catch (error) {
+    console.error('Login error:', error);
+    res.status(401).json({ 
+      error: error.message || 'Login failed' 
+    });
+  }
 });
-
+/*
 // Get user by ID (protected route)
 router.get('/:id', async (req, res) => {
     try {
