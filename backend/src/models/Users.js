@@ -36,33 +36,23 @@ const createAuthUser = async (email, password) => {
       }
 };
 
+const authLogin = async (email, password) => {
+  try {
+  const {data, error} = await supabase.auth.signInWithPassword({
+    email,
+    password,
+  });
 
- //Login user
-const loginUser = async (email, password) => {
-          try {
-    const { data, error } = await supabase.auth.signInWithPassword({
-      email,
-      password
-    });
+  if(error) throw error;
 
-    if (error) throw error;
+  return data;
 
-    // Get additional user data from your custom table if needed
-    const { data: userData } = await supabase
-      .from('users')
-      .select('*')
-      .eq('id', data.user.id)
-      .single();
-
-    return {
-      ...data.user,
-      ...userData,
-      session: data.session
-    };
   } catch (error) {
+    console.error('Error logging in:', error.message)
     throw error;
   }
 };
+
 /*
 // Get user by ID
 const getUserById = async (id) => {
@@ -82,7 +72,7 @@ const getUserById = async (id) => {
 */
 module.exports = {
     createUser,
-    loginUser,
+    authLogin,
     createAuthUser
     //getUserById
 };

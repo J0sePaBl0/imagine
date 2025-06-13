@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const { createUser, loginUser, getUserById,createAuthUser } = require('../models/Users');
+const { createUser, loginUser, getUserById,createAuthUser, authLogin } = require('../models/Users');
+const supabase = require('../database/db');
 
 router.post('/signup', async (req, res) => {
     try {
@@ -16,23 +17,13 @@ router.post('/signup', async (req, res) => {
 
 // Login user
 router.post('/login', async (req, res) => {
-    const { email, password } = req.body;
-
-  if (!email || !password) {
-    return res.status(400).json({ 
-      error: 'Email and password are required' 
-    });
-  }
-
+  const {email, password} = req.body;  
   try {
-    const result = await loginUser(email, password);
-    res.json(result);
-  } catch (error) {
-    console.error('Login error:', error);
-    res.status(401).json({ 
-      error: error.message || 'Login failed' 
-    });
-  }
+      const data = await authLogin(email, password);
+      res.status(200).send(data);
+    } catch (error) {
+      res.status(400).send("Failed to login")
+    }
 });
 /*
 // Get user by ID (protected route)
