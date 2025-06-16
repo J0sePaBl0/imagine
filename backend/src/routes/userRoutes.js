@@ -8,10 +8,17 @@ router.post('/signup', async (req, res) => {
         const { name, email, password, address } = req.body;
         const authId = await createAuthUser(email,password);
         await createUser({auth_id: authId, name, email, address});
-        res.status(200).send("Succesfully signed user up");
+        res.status(200).json({ 
+        success: true,
+        message: "Successfully registered",
+        user: { name: name, email: email, address: address }
+        });
     } catch (error) {
         console.error('User creation error:', error);
-        res.status(400).send("Failed to sign user up")
+        res.status(400).json({ 
+        success: false,
+        message: "Failed to signup",
+        });
     }
 });
 
