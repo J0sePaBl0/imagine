@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 export function SignUp() {
   const [formData, setFormData] = useState({
-    username: '',
+    name: '',
     email: '',
     address: '',
     password: ''
@@ -26,7 +26,7 @@ export function SignUp() {
     setError(null);
 
     try {
-      const response = await fetch('http://localhost:3001/api/users/', {
+      const response = await fetch('http://localhost:3001/api/users/signup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -34,23 +34,28 @@ export function SignUp() {
         body: JSON.stringify(formData),
       });
 
-      const data = await response.json();
-
+      const responseText = await response.text();
+      
       if (!response.ok) {
-        throw new Error(data.message || 'Error en el registro');
+       let errorData;
+        try {
+          errorData = JSON.parse(responseText);
+        } catch {
+         errorData = {message: responseText};
+        }
+        throw new Error(errorData.message);
       }
 
-      console.log('Registro exitoso:', data);
-      navigate('/login');
-    } catch (err) {
-      console.error('Error en registro:', err);
-      setError(err.message || 'Error al registrar usuario');
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
-  return (
+        const data = JSON.parse(responseText);
+        console.log('Registro exitoso:', data);
+        navigate('/login');
+      } catch (err) {
+        setError(err.message || 'Error al registrar usuario');
+      } finally {
+        setIsLoading(false);
+      }
+};
+   return (
     <div className="max-w-md mx-auto p-6 bg-white rounded-lg shadow-md">
       <h1 className="text-2xl font-bold text-center text-gray-800 mb-6">Registro</h1>
       
@@ -62,14 +67,14 @@ export function SignUp() {
 
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
-          <label htmlFor="username" className="block text-sm font-medium text-gray-700">
+          <label htmlFor="name" className="block text-sm font-medium text-gray-700">
             Nombre de usuario
           </label>
           <input
             type="text"
-            id="username"
-            name="username"
-            value={formData.username}
+            id="name"
+            name="name"
+            value={formData.name} 
             onChange={handleChange}
             required
             className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
@@ -90,6 +95,7 @@ export function SignUp() {
             className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
           />
         </div>
+        
         <div>
           <label htmlFor="address" className="block text-sm font-medium text-gray-700">
             Dirección
