@@ -1,9 +1,9 @@
-/*const express = require('express');
+const express = require('express');
 const router = express.Router();
-const { getAllPaints, createPaint, updatePaint, getPaintById } = require('../models/Paint');
+const { getAllPaints} = require('../models/Paint');
 
 
-router.get('/', async (req, res) => {
+router.get('/getAllPaints', async (req, res) => {
   try {
     const paints = await getAllPaints();
     res.json(paints);
@@ -11,7 +11,7 @@ router.get('/', async (req, res) => {
     res.status(500).send('Error al obtener pinturas');
   }
 });
-
+/*
 router.get('/getById', async (req,res) => {
   try {
     const { id } = req.query;
@@ -44,7 +44,7 @@ router.post('/updatePaint', async (req,res)=>{
     res.status(500).send('Error al actualizar pintura');
   }
 });
+*/
 
 
-
-module.exports = router;*/
+module.exports = router;

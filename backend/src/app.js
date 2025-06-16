@@ -10,7 +10,7 @@ const app = express();
 app.use(cors()); 
 app.use(express.json());
 
-//app.use('/api/paints', paintRoutes);
+app.use('/api/paints', paintRoutes);
 app.use('/api/users', userRoutes);
 
 const PORT = process.env.PORT || 3001;

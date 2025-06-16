@@ -1,4 +1,3 @@
-const { SupabaseClient } = require('@supabase/supabase-js');
 const supabase = require('../database/db');
 
 
