@@ -10,21 +10,21 @@ export function Catalogo (){
     useEffect(() => {
         const fetchPaints = async () => {
           try {
-            const response = await fetch('http://localhost:3001/api/paints');
+            const response = await fetch('http://localhost:3001/api/paints/getAllPaints');
             
             if (!response.ok) {
               throw new Error('Error al cargar pinturas');
             }
     
             const data = await response.json();
-            setPaints(data);
+            setPaints(data.data);
+            console.log('response', data.data)
           } catch (err) {
             setError(err.message);
           } finally {
             setLoading(false);
           }
         };
-    
         fetchPaints();
       }, []);
 
@@ -54,8 +54,7 @@ export function Catalogo (){
                 <div className='bg-gray-950/60 p-10 border border-purple-800 rounded-2xl flex flex-row flex-wrap'>
                     
                     {paints.map(paint => (
-                        
-                    <div className="">
+                    <div>
                         <PaintCard image = {paint.imagen} price = {paint.precio} name = {paint.nombre} descripcion = {paint.descripcion} />
                     </div>
                 ))}
