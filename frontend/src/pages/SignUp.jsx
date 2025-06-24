@@ -56,9 +56,9 @@ export function SignUp() {
       }
 };
    return (
-    <div className='bg-fuchsia-950 border border-amber-500 w-screen h-screen'> 
-      <div className="max-w-md mx-auto p-6 bg-white rounded-lg shadow-md">
-        <h1 className="text-2xl font-bold text-center text-gray-800 mb-6">Registro</h1>
+    <div className="bg-[url(/images/singUpBackground.jpg)] bg-center border-amber-500 w-screen h-screen flex md:justify-start sm:justify-center items-center"> 
+      <div className="w-full m-10 md:h-3/4 md:w-1/3 lg:w-1/4 p-6 border border-red-700 relative md:left-20 md:m-5 md:ml-10">
+        <h1 className="text-4xl font-bold  text-white mb-6">REGISTRO</h1>
         
         {error && (
           <div className="mb-4 p-3 bg-red-100 text-red-700 rounded-md">
@@ -68,22 +68,22 @@ export function SignUp() {
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+            <label htmlFor="name" className="block text-sm font-medium text-white">
               Nombre de usuario
             </label>
-            <input
+            <input 
               type="text"
               id="name"
               name="name"
               value={formData.name} 
               onChange={handleChange}
               required
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+              className="mt-1 block w-full px-3 py-2 bg-purple-400 opacity-20 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
             />
           </div>
           
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+            <label htmlFor="email" className="block text-sm font-medium text-white">
               Email
             </label>
             <input
@@ -93,12 +93,12 @@ export function SignUp() {
               value={formData.email}
               onChange={handleChange}
               required
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+              className="mt-1 block w-full px-3 py-2 bg-purple-400 opacity-20 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
             />
           </div>
           
           <div>
-            <label htmlFor="address" className="block text-sm font-medium text-gray-700">
+            <label htmlFor="address" className="block text-sm font-medium text-white">
               Dirección
             </label>
             <input
@@ -108,12 +108,12 @@ export function SignUp() {
               value={formData.address}
               onChange={handleChange}
               required
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+              className="mt-1 block w-full px-3 py-2 bg-purple-400 opacity-20 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
             />
           </div>
           
           <div>
-            <label htmlFor="password" className="block text-sm font-medium text-gray-700">
+            <label htmlFor="password" className="block text-sm font-medium text-white">
               Contraseña
             </label>
             <input
@@ -124,7 +124,7 @@ export function SignUp() {
               onChange={handleChange}
               required
               minLength="6"
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+              className="mt-1 block w-full px-3 py-2 bg-purple-400 opacity-20 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
             />
           </div>
           
