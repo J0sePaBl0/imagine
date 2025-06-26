@@ -57,10 +57,10 @@ export function SignUp() {
 };
    return (
     <div className="border border-amber-600 flex flex-row h-screen relative">
-      <div className='border border-white w-3/4 absolute  h-full bg-linear-to-r from-[#020024] from-10% via-purple-950/20 via-80% to-purple-600/0 to-10%'> 
-        <div className="w-full md:h-3/4 md:w-1/2 lg:w-1/2 p-6 border border-red-700 relative md:left-30 md:m-5 md:ml-10 z-10">
-          <h1 className="text-4xl font-bold  text-white mb-6">REGISTRO</h1>
+      <div className='border border-white w-full flex items-center h-full bg-[linear-gradient(to_right,_#020024_0%,_#1e0d32_50%,_#33165600_100%)]'> 
+        <div className="w-full md:h-3/4 md:w-1/2 lg:w-96 p-6 relative md:top-5 md:left-40 md:m-5 md:ml-10 z-10">
           
+          <h1 className="text-4xl font-bold  text-stone-400 mb-6">REGISTRO</h1>
           {error && (
             <div className="mb-4 p-3 bg-red-100 text-red-700 rounded-md">
               {error}
@@ -69,7 +69,7 @@ export function SignUp() {
 
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-white">
+              <label htmlFor="name" className="block text-sm font-medium text-stone-500">
                 Nombre de usuario
               </label>
               <input 
@@ -84,7 +84,7 @@ export function SignUp() {
             </div>
             
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-white">
+              <label htmlFor="email" className="block text-sm font-medium text-stone-500">
                 Email
               </label>
               <input
@@ -99,7 +99,7 @@ export function SignUp() {
             </div>
             
             <div>
-              <label htmlFor="address" className="block text-sm font-medium text-white">
+              <label htmlFor="address" className="block text-sm font-medium text-stone-500">
                 Dirección
               </label>
               <input
@@ -114,7 +114,7 @@ export function SignUp() {
             </div>
             
             <div>
-              <label htmlFor="password" className="block text-sm font-medium text-white">
+              <label htmlFor="password" className="block text-sm font-medium text-stone-500">
                 Contraseña
               </label>
               <input
@@ -132,7 +132,7 @@ export function SignUp() {
             <button
               type="submit"
               disabled={isLoading}
-              className="mt-3 w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:opacity-50"
+              className="mt-3 w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-[#7531d6] hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 "
             >
               {isLoading ? (
                 <>
