@@ -5,6 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "node src/app.js",
+    "build": "echo 'Building...' && npm install",
     "dev": "nodemon src/app.js",
     "test": "jest --coverage"
   },
