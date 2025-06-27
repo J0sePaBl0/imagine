@@ -10,12 +10,11 @@ export function Catalogo (){
     useEffect(() => {
         const fetchPaints = async () => {
           try {
-            const response = await fetch('http://localhost:3001/api/paints/getAllPaints');
+            const response = await fetch(`${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/api/paints/getAllPaints`);
             
             if (!response.ok) {
               throw new Error('Error al cargar pinturas');
             }
-    
             const data = await response.json();
             setPaints(data.data);
             console.log('response', data.data)

@@ -26,7 +26,7 @@ export function SignUp() {
     setError(null);
 
     try {
-      const response = await fetch('http://localhost:3001/api/users/signup', {
+      const response = await fetch(`${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/api/users/signup`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
