@@ -1,8 +1,8 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
-const paintRoutes = require('./routes/paintRoutes');
-const userRoutes = require('./routes/userRoutes');
+const paintRoutes = require('./src/routes/paintRoutes');
+const userRoutes = require('./src/routes/userRoutes');
 
 const app = express();
 
