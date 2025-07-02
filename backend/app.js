@@ -3,24 +3,26 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 
-// Basic CORS
-// Replace the basic CORS with this:
+const whitelist = [
+  process.env.FRONTEND_URL,
+  'http://localhost:5173'
+];
+
 const corsOptions = {
-  origin: [
-    process.env.FRONTEND_URL, // Your Vercel frontend URL
-    'http://localhost:5173'   // Local development
-  ],
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
+  origin: function (origin, callback) {
+    if (!origin || whitelist.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   credentials: true
 };
 
 app.use(cors(corsOptions));
+app.use(express.json()); // ← importante si estás usando POST con JSON
 
-app.get('/api/test/:name', (req, res) => {
-  res.json({ working: true, name: req.params.name });
-});
-
+// Rutas
 try {
   const paintRoutes = require('./src/routes/paintRoutes');
   const userRoutes = require('./src/routes/userRoutes');
@@ -30,6 +32,14 @@ try {
   console.error('ROUTE LOADING ERROR:', err);
   process.exit(1);
 }
+
+// Error handler para CORS
+app.use((err, req, res, next) => {
+  if (err.message === 'Not allowed by CORS') {
+    return res.status(403).json({ error: 'CORS error: Origin not allowed' });
+  }
+  next(err);
+});
 
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
