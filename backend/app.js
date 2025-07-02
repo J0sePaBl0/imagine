@@ -6,21 +6,28 @@ const userRoutes = require('./src/routes/userRoutes');
 
 const app = express();
 
-app.use(cors());
+const corsOptions = {
+  origin: [
+    'http://localhost:3000',
+    'https://imagine-j13q.vercel.app/'
+  ],
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true 
+};
+
+app.use(cors(corsOptions));
+app.options('*', cors(corsOptions)); 
 app.use(express.json());
 
-// API routes
 app.use('/api/paints', paintRoutes);
 app.use('/api/users', userRoutes);
 
-// Start server locally OR export for Vercel
 if (require.main === module) {
-  // Running locally
   const PORT = process.env.PORT || 3001;
   app.listen(PORT, () => {
     console.log(`Server running locally on http://localhost:${PORT}`);
   });
 } else {
-  // Export for Vercel
   module.exports = app;
 }
