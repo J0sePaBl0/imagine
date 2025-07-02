@@ -1,33 +1,29 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
-const paintRoutes = require('./src/routes/paintRoutes');
-const userRoutes = require('./src/routes/userRoutes');
-
 const app = express();
 
-const corsOptions = {
-  origin: [
-    'http://localhost:3000',
-    'https://imagine-j13q.vercel.app/'
-  ],
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
-  credentials: true 
-};
-
-app.use(cors(corsOptions));
-app.options('*', cors(corsOptions)); 
+// Basic CORS
+app.use(cors());
 app.use(express.json());
 
-app.use('/api/paints', paintRoutes);
-app.use('/api/users', userRoutes);
+// Test route first
+app.get('/api/test/:name', (req, res) => {
+  res.json({ working: true, name: req.params.name });
+});
 
-if (require.main === module) {
-  const PORT = process.env.PORT || 3001;
-  app.listen(PORT, () => {
-    console.log(`Server running locally on http://localhost:${PORT}`);
-  });
-} else {
-  module.exports = app;
+// Then try importing your routes
+try {
+  const paintRoutes = require('./src/routes/paintRoutes');
+  const userRoutes = require('./src/routes/userRoutes');
+  app.use('/api/paints', paintRoutes);
+  app.use('/api/users', userRoutes);
+} catch (err) {
+  console.error('ROUTE LOADING ERROR:', err);
+  process.exit(1);
 }
+
+const PORT = process.env.PORT || 3001;
+app.listen(PORT, () => {
+  console.log(`Server running on http://localhost:${PORT}`);
+});
