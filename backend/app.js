@@ -3,10 +3,7 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 
-const whitelist = [
-  process.env.FRONTEND_URL,
-  'http://localhost:5173'
-];
+const whitelist = process.env.FRONTEND_URL.split(',');
 
 const corsOptions = {
   origin: function (origin, callback) {
