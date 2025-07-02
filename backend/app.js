@@ -4,15 +4,23 @@ const cors = require('cors');
 const app = express();
 
 // Basic CORS
-app.use(cors());
-app.use(express.json());
+// Replace the basic CORS with this:
+const corsOptions = {
+  origin: [
+    process.env.FRONTEND_URL, // Your Vercel frontend URL
+    'http://localhost:5173'   // Local development
+  ],
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true
+};
 
-// Test route first
+app.use(cors(corsOptions));
+
 app.get('/api/test/:name', (req, res) => {
   res.json({ working: true, name: req.params.name });
 });
 
-// Then try importing your routes
 try {
   const paintRoutes = require('./src/routes/paintRoutes');
   const userRoutes = require('./src/routes/userRoutes');
