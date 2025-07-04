@@ -1,6 +1,8 @@
 import { SignupForm } from "../components/SignupForm";
 
-export function SignUp() {
+import React from "react";
+
+export function UserFormsLayout() {
    return (
     <div className="border border-amber-600 flex flex-row h-screen relative">
       <div className='border border-white w-full flex items-center h-full bg-[linear-gradient(to_right,_#020024_0%,_#1e0d32_50%,_#33165600_100%)]'> 

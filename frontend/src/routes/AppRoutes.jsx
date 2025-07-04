@@ -2,8 +2,7 @@
 import { Routes, Route } from 'react-router-dom';
 import { Home } from '../pages/Home';
 import { Catalogo } from '../pages/Catalogo';
-import { SignUp } from '../pages/SignUp';
-import { LogIn } from '../pages/LogIn';
+import { UserFormsLayout } from '../pages/UserFormsLayout';
 import { Layout } from '../layouts/Layout';
 
 const AppRoutes = () => {
@@ -14,10 +13,7 @@ const AppRoutes = () => {
         <Route path="/" element={<Home />} />
         <Route path="/catalogo" element={<Catalogo />} />
       </Route>
-
-    
-      <Route path="/login" element={<LogIn />} />
-      <Route path="/signin" element={<SignUp />} />
+      <Route path="/userForms" element={<UserFormsLayout />} />
     </Routes>
   );
 };
