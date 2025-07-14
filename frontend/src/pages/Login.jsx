@@ -59,7 +59,7 @@ export function Login() {
       <div className='border border-white w-full flex items-center h-full bg-[linear-gradient(to_right,_#020024_0%,_#1e0d32_50%,_#33165600_100%)]'> 
         <div className="w-full md:h-3/4 md:w-1/2 lg:w-96 p-6 relative md:top-5 md:left-40 md:m-5 md:ml-10 z-10">
  <form onSubmit={handleSubmit} className="space-y-4">
-            <h1 className="text-4xl font-bold  text-stone-400 mb-6">REGISTRO</h1>
+            <h1 className="text-4xl font-bold  text-stone-400 mb-6">INICIO DE SESION</h1>
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-stone-500">
                 Email
