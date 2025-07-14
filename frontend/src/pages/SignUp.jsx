@@ -1,8 +1,9 @@
+
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-export function SignupForm() {
-    const [formData, setFormData] = useState({
+export function SignUp() {
+  const [formData, setFormData] = useState({
     name: '',
     email: '',
     address: '',
@@ -23,7 +24,7 @@ export function SignupForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
-    setError(null);
+    
 
     try {
       const response = await fetch(`${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/api/users/signup`, {
@@ -48,15 +49,18 @@ export function SignupForm() {
 
         const data = JSON.parse(responseText);
         console.log('Registro exitoso:', data);
-        navigate('/login');
+        navigate('/Login');
       } catch (err) {
         setError(err.message || 'Error al registrar usuario');
       } finally {
         setIsLoading(false);
       }
-};
-    return (
-        <form onSubmit={handleSubmit} className="space-y-4">
+      };
+   return (
+    <div className="flex flex-row h-screen relative">
+      <div className='border border-white w-full flex items-center h-full bg-[linear-gradient(to_right,_#020024_0%,_#1e0d32_50%,_#33165600_100%)]'> 
+        <div className="w-full md:h-3/4 md:w-1/2 lg:w-96 p-6 relative md:top-5 md:left-40 md:m-5 md:ml-10 z-10">
+          <form onSubmit={handleSubmit} className="space-y-4">
             <h1 className="text-4xl font-bold  text-stone-400 mb-6">REGISTRO</h1>
             <div>
               <label htmlFor="name" className="block text-sm font-medium text-stone-500">
@@ -118,7 +122,7 @@ export function SignupForm() {
                 className="mt-1 block w-full px-3 py-2 bg-purple-400 opacity-20 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
               />
             </div>
-            
+            <a className="text-purple-400" href='/Login'>Ya tengo una cuenta</a>
             <button
               type="submit"
               disabled={isLoading}
@@ -135,8 +139,10 @@ export function SignupForm() {
               ) : 'Registrarse'}
             </button>
           </form>
-    )
-
+        </div>
+      </div>
+      <div className='bg-[url(/images/singupbackground2.jpg)] bg-no-repeat opacity-55 bg-cover bg-right w-2/4 absolute inset-y-0 right-0 -z-10'>
+      </div>
+  </div>
+  );
 }
-
-

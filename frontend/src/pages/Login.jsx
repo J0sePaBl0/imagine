@@ -1,8 +1,9 @@
+
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-export function LoginForm() {
-    const [formData, setFormData] = useState({
+export function Login() {
+  const [formData, setFormData] = useState({
     name: '',
     password: ''
   });
@@ -21,7 +22,7 @@ export function LoginForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
-    setError(null);
+  
 
     try {
       const response = await fetch(`${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/api/users/login`, {
@@ -46,15 +47,18 @@ export function LoginForm() {
 
         const data = JSON.parse(responseText);
         console.log('Registro exitoso:', data);
-        navigate('/home');
+        navigate('/');
       } catch (err) {
         setError(err.message || 'Error al iniciar sesión');
       } finally {
         setIsLoading(false);
       }
 };
-    return (
-        <form onSubmit={handleSubmit} className="space-y-4">
+   return (
+    <div className="border border-amber-600 flex flex-row h-screen relative">
+      <div className='border border-white w-full flex items-center h-full bg-[linear-gradient(to_right,_#020024_0%,_#1e0d32_50%,_#33165600_100%)]'> 
+        <div className="w-full md:h-3/4 md:w-1/2 lg:w-96 p-6 relative md:top-5 md:left-40 md:m-5 md:ml-10 z-10">
+ <form onSubmit={handleSubmit} className="space-y-4">
             <h1 className="text-4xl font-bold  text-stone-400 mb-6">REGISTRO</h1>
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-stone-500">
@@ -96,13 +100,15 @@ export function LoginForm() {
                     <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                     <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                   </svg>
-                  Registrando...
+                  Iniciando sesion...
                 </>
               ) : 'Iniciar Sesión'}
             </button>
           </form>
-    )
-
+        </div>
+      </div>
+      <div className='bg-[url(/images/singupbackground2.jpg)] bg-no-repeat opacity-55 bg-cover bg-right w-2/4 absolute inset-y-0 right-0 -z-10'>
+      </div>
+  </div>
+  );
 }
-
-
