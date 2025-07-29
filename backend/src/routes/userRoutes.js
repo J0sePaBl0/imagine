@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const { createUser, loginUser, getUserById,createAuthUser, authLogin } = require('../models/Users');
-const supabase = require('../database/db');
+const { createUser, loginUser, getUserByAuthId,createAuthUser, authLogin } = require('../models/Users');
+
 
 router.post('/signup', async (req, res) => {
     try {
@@ -32,11 +32,11 @@ router.post('/login', async (req, res) => {
       res.status(400).send("Failed to login")
     }
 });
-/*
+
 // Get user by ID (protected route)
-router.get('/:id', async (req, res) => {
+router.get('/auth', async (req, res) => {
     try {
-        const user = await getUserById(req.params.id);
+        const user = await getUserByAuthId(req.user.auth_id);
         if (!user) {
             return res.status(404).json({ error: 'User not found' });
         }
@@ -45,5 +45,5 @@ router.get('/:id', async (req, res) => {
         res.status(500).json({ error: 'Error getting user' });
     }
 });
-*/
+
 module.exports = router;

@@ -69,9 +69,14 @@ const getUserByAuthId = async (authId) => {
     }
 };
 
+const getUserData = async (req, res) => {
+    res.status(200).send(req.user);
+}
+
 module.exports = {
     createUser,
     authLogin,
     createAuthUser,
-    getUserByAuthId
+    getUserByAuthId,
+    getUserData
 };
