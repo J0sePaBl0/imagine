@@ -52,26 +52,26 @@ const authLogin = async (email, password) => {
   }
 };
 
-/*
-// Get user by ID
-const getUserById = async (id) => {
+const getUserByAuthId = async (authId) => {
     try {
         const { data, error } = await supabase
             .from('users')
             .select('*')
-            .eq('id', id)
+            .eq('auth_id', authId)
             .single();
 
         if (error) throw error;
+
         return data;
-    } catch (error) {
-        throw error;
+    } catch (err) {
+        console.error('Error fetching user by auth ID:', err.message);
+        throw err;
     }
 };
-*/
+
 module.exports = {
     createUser,
     authLogin,
-    createAuthUser
-    //getUserById
+    createAuthUser,
+    getUserByAuthId
 };
