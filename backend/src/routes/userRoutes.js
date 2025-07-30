@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { createUser, loginUser, getUserByAuthId,createAuthUser, authLogin } = require('../models/Users');
-
+const supabaseAuthMiddleware = require('../middlewares/auth');
 
 router.post('/signup', async (req, res) => {
     try {
@@ -34,16 +34,11 @@ router.post('/login', async (req, res) => {
 });
 
 // Get user by ID (protected route)
-router.get('/auth', async (req, res) => {
-    try {
-        const user = await getUserByAuthId(req.user.auth_id);
-        if (!user) {
-            return res.status(404).json({ error: 'User not found' });
-        }
-        res.json(user);
-    } catch (error) {
-        res.status(500).json({ error: 'Error getting user' });
-    }
+router.get('/profile', supabaseAuthMiddleware, (req, res) => {
+    res.json({ 
+        success: true,
+        user: req.user 
+    });
 });
 
 module.exports = router;
