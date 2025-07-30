@@ -69,6 +69,23 @@ const authLogin = async (email, password) => {
     throw error;
   }
 };
+const updateUser = async (userId, userData) => {
+    try {   
+        const { data, error } = await supabase
+            .from('users')
+            .update(userData)
+            .eq('auth_id', userId)
+            .select();
+
+        if (error) {
+            throw new Error(`Supabase error: ${error.message}`);
+        }
+        return data[0];
+    } catch (err) {
+        console.error("Error updating user:", err.message);
+        throw new Error(`Failed to update user: ${err.message}`);
+    }
+};
 
 const getUserByAuthId = async (authId) => {
     try {
@@ -97,5 +114,6 @@ module.exports = {
     createAuthUser,
     getUserByAuthId,
     getUserData,
-    deleteUser
+    deleteUser,
+    updateUser
 };

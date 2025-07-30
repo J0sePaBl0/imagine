@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { createUser, loginUser, getUserByAuthId,createAuthUser, authLogin, deleteUser } = require('../models/Users');
+const { createUser, loginUser, getUserByAuthId,createAuthUser, authLogin, deleteUser, updateUser } = require('../models/Users');
 const supabaseAuthMiddleware = require('../middlewares/auth');
 const checkRole = require('../middlewares/checkRole');
 const supabase = require('../database/db');
@@ -72,6 +72,17 @@ router.delete('/:id/delete', supabaseAuthMiddleware, checkRole('admin'), async (
         return res.json({ success: true, message: "User deleted successfully" });
     } catch (err) {
         console.error('Error en el servidor:', err);
+        return res.status(500).json({ error: "Error interno" });
+    }
+});
+router.put('/:id/update', supabaseAuthMiddleware, async (req, res) => {
+    const { id } = req.params;
+    const userData = req.body;
+    try {
+        const updatedUser = await updateUser(id, userData);
+        return res.json({ success: true, user: updatedUser });
+    } catch (err) {
+        console.error('Error updating user:', err);
         return res.status(500).json({ error: "Error interno" });
     }
 });
