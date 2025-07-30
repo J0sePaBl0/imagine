@@ -108,6 +108,19 @@ const getUserData = async (req, res) => {
     res.status(200).send(req.user);
 }
 
+const resetPassword = async (email) => {
+    try {
+        const { data, error } = await supabase.auth.resetPasswordForEmail(email);
+        if (error) throw error;
+        return data;
+    } catch (err) {
+        console.error('Error resetting password:', err.message);
+        throw err;
+    }
+
+
+}
+
 module.exports = {
     createUser,
     authLogin,
