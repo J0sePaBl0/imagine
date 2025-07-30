@@ -2,16 +2,18 @@ const express = require('express');
 const router = express.Router();
 const { createUser, loginUser, getUserByAuthId,createAuthUser, authLogin } = require('../models/Users');
 const supabaseAuthMiddleware = require('../middlewares/auth');
+const checkRole = require('../middlewares/checkRole');
+const supabase = require('../database/db');
 
 router.post('/signup', async (req, res) => {
     try {
-        const { name, email, password, address } = req.body;
+        const { name, email, password, address, role = 'user' } = req.body;
         const authId = await createAuthUser(email,password);
-        await createUser({auth_id: authId, name, email, address});
+        await createUser({auth_id: authId, name, email, address, role});
         res.status(200).json({ 
         success: true,
         message: "Successfully registered",
-        user: { name: name, email: email, address: address }
+        user: { name: name, email: email, address: address, role: role }
         });
     } catch (error) {
         console.error('User creation error:', error);
@@ -41,4 +43,26 @@ router.get('/profile', supabaseAuthMiddleware, (req, res) => {
     });
 });
 
+router.post('/:id/promoteUser', supabaseAuthMiddleware, checkRole('admin'), async (req, res) => {
+    const { id } = req.params;
+    const { data, error } = await supabase
+        .from('users')
+        .update({ role: 'admin' })
+        .eq('auth_id', id)
+        .select();
+        try {
+            if (error) {
+                console.error('Error promoting user:', error);
+                return res.status(400).json({ 
+                    success: false,
+                    message: "Failed to promote user"
+                });
+            }
+            return res.json({ success: true, user: data[0] }); 
+        } catch (err) {
+                console.error('Error en el servidor:', err);
+                return res.status(500).json({ error: "Error interno" });
+        }
+        
+});
 module.exports = router;
