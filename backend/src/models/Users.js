@@ -18,6 +18,24 @@ const createUser = async (userData) => {
     throw new Error(`Failed to create user: ${err.message}`);
     }
 };
+const deleteUser = async (userId) => {
+    try {
+        const { data, error } = await supabase.from('users')
+        .delete()
+        .eq('auth_id', userId)
+        .select();
+        if (error) {
+            throw new Error(`Supabase error: ${error.message}`);
+        }
+        return data;
+    } catch (err) {
+        console.error("Error deleting user:", err.message);
+        throw new Error(`Failed to delete user: ${err.message}`);
+    }
+
+
+
+}
 
 const createAuthUser = async (email, password) => {
     try{
@@ -78,5 +96,6 @@ module.exports = {
     authLogin,
     createAuthUser,
     getUserByAuthId,
-    getUserData
+    getUserData,
+    deleteUser
 };

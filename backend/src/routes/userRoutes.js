@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { createUser, loginUser, getUserByAuthId,createAuthUser, authLogin } = require('../models/Users');
+const { createUser, loginUser, getUserByAuthId,createAuthUser, authLogin, deleteUser } = require('../models/Users');
 const supabaseAuthMiddleware = require('../middlewares/auth');
 const checkRole = require('../middlewares/checkRole');
 const supabase = require('../database/db');
@@ -64,5 +64,15 @@ router.post('/:id/promoteUser', supabaseAuthMiddleware, checkRole('admin'), asyn
                 return res.status(500).json({ error: "Error interno" });
         }
         
+});
+router.delete('/:id/delete', supabaseAuthMiddleware, checkRole('admin'), async (req, res) => {
+    const { id } = req.params;
+    try {
+        await deleteUser(id);
+        return res.json({ success: true, message: "User deleted successfully" });
+    } catch (err) {
+        console.error('Error en el servidor:', err);
+        return res.status(500).json({ error: "Error interno" });
+    }
 });
 module.exports = router;
