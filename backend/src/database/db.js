@@ -1,7 +1,9 @@
 const { createClient } = require('@supabase/supabase-js');
 require('dotenv').config();
 
+//URL from supabase database settings 
 const supabaseUrl = process.env.POSTGRE_URL;
+//secret key not anon
 const supabaseKey = process.env.POSTGRE_ANON_PUBLIC_KEY;
 
 if (!supabaseUrl || !supabaseKey) {
