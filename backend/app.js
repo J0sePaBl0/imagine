@@ -11,7 +11,7 @@ const allowedOrigins = [
   process.env.PUBLIC_WEB_ORIGIN,           // e.g. https://imagine-i13q.vercel.app
   'https://imagine-j13q.vercel.app',
   'http://localhost:5173',
-  'http://imagine-j13q.vercel.app/catalogo',
+  'https://imagine-j13q-du8jodnky-artaviajosepablo687-5292s-projects.vercel.app',
 ];
 
 const corsOptions = {
