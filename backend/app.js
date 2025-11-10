@@ -9,7 +9,7 @@ const app = express();
 // --- CORS allow-list ---
 const allowedOrigins = [
   process.env.PUBLIC_WEB_ORIGIN,           // e.g. https://imagine-i13q.vercel.app
-  'https://imagine-i13q.vercel.app',
+  'https://imagine-j13q.vercel.app',
   'http://localhost:5173'
 ];
 
