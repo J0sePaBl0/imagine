@@ -11,20 +11,19 @@ router.get('/getAllPaints', async (req, res) => {
     res.status(500).send('Error al obtener pinturas');
   }
 });
-/*
+
 router.get('/getById', async (req,res) => {
   try {
-    const { id } = req.query;
-    const paint = await getPaintById(id);
-    if (!paint) {
-      return res.status(404).json({ error: 'Pintura no encontrada' });
-    }
+    const paint = await getPaintById(req.params.id);
+    if (!paint) return res.status(404).json({ error: 'Pintura no encontrada' });
     res.json(paint);
   } catch (error) {
+    if (error.status === 400) return res.status(400).json({ error: error.message });
+    console.error('Error al obtener pintura:', error.message);
     res.status(500).send('Error al obtener pintura');
   }
 });
-
+/*
 router.post('/', async (req, res) => {
   const { nombre, descripcion, categoria, precio, imagen } = req.body;
   try {

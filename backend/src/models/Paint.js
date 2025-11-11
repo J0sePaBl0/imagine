@@ -26,11 +26,11 @@ const updatePaint = async (id, name, description, category, price, image) => {
   const { rows } = await pool.query(query,values);
   return rows[0];
 }
-
+*/
 const getPaintById = async (id) => {
   const query = 'SELECT * FROM paints WHERE id = $1'
   const {rows} = await pool.query(query, [id]);
   return rows[0];
-}*/
+}
 
-module.exports = { getAllPaints};
+module.exports = { getAllPaints, getPaintById};
