@@ -1,5 +1,14 @@
 const supabase = require('../database/db');
 
+const pick = (row) => ({
+  id: row.id,
+  name: row.nombre,
+  description: row.descripcion,
+  imagen: row.imagen,
+  category: row.categoria,
+  price: row.precio,
+});
+
 const getAllPaints = async () => {
   try {
   const data = await supabase.from('paints').select('*')
@@ -28,9 +37,26 @@ const updatePaint = async (id, name, description, category, price, image) => {
 }
 */
 const getPaintById = async (id) => {
-  const query = 'SELECT * FROM paints WHERE id = $1'
-  const {rows} = await pool.query(query, [id]);
-  return rows[0];
-}
+  // normalize/validate (if ids are integers)
+  const n = parseInt(id, 10);
+  if (Number.isNaN(n) || n <= 0) {
+    const err = new Error('Invalid id');
+    err.status = 400;
+    throw err;
+  }
+
+  const { data, error } = await supabase
+    .from('paints')
+    .select('id,nombre,descripcion,categoria,precio,imagen') // no parentheses
+    .eq('id', n)
+    .single(); // returns { data:null, error:{status:406} } when not found
+
+  if (error) {
+    if (error.status === 406) return null; // not found
+    throw error; // other errors
+  }
+
+  return pick(data); // <- pass the row only
+};
 
 module.exports = { getAllPaints, getPaintById};
