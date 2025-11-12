@@ -54,7 +54,7 @@ export function Catalogo (){
                     
                     {paints.map(paint => (
                     <div>
-                        <PaintCard image = {paint.imagen} price = {paint.precio} name = {paint.nombre} descripcion = {paint.descripcion} />
+                        <PaintCard key={paint.id} id = {paint.id} image = {paint.imagen} price = {paint.precio} name = {paint.nombre} descripcion = {paint.descripcion} />
                     </div>
                 ))}
                 </div>
