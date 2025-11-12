@@ -4,7 +4,7 @@ const pick = (row) => ({
   id: row.id,
   name: row.nombre,
   description: row.descripcion,
-  imagen: row.imagen,
+  image: row.imagen,
   category: row.categoria,
   price: row.precio,
 });
@@ -55,7 +55,7 @@ const getPaintById = async (id) => {
     if (error.status === 406) return null; // not found
     throw error; // other errors
   }
-
+  console.log(data)
   return pick(data); // <- pass the row only
 };
 

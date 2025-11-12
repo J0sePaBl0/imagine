@@ -51,12 +51,13 @@ export function Paint() {
       <p className="opacity-70 text-white">
         {paint.category} — ₡{paint.price}
       </p>
+      <h1 className="mt-6 text-2xl font-semibold text-white">{paint.image}</h1>
 
-      {paint.image && (
+     {paint.image && (
         <img
           src={paint.image}
           alt="Imagen del cuadro"
-          className="mt-6 w-full max-h-[480px] object-cover rounded-xl"
+          className="object-scale-down w-full h-60"
         />
       )}
 
