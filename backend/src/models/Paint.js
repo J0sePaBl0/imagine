@@ -1,14 +1,5 @@
 const supabase = require('../database/db');
 
-const pick = (row) => ({
-  id: row.id,
-  name: row.nombre,
-  description: row.descripcion,
-  image: row.imagen,
-  category: row.categoria,
-  price: row.precio,
-});
-
 const getAllPaints = async () => {
   try {
   const data = await supabase.from('paints').select('*')
@@ -56,7 +47,7 @@ const getPaintById = async (id) => {
     throw error; // other errors
   }
   console.log(data)
-  return pick(data); // <- pass the row only
+  return data; // <- pass the row only
 };
 
 module.exports = { getAllPaints, getPaintById};

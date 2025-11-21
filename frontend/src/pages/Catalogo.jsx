@@ -11,7 +11,7 @@ export function Catalogo (){
         const fetchPaints = async () => {
           try {
             const response = await fetch(`${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/api/paints/getAllPaints`);
-            
+            console.log('response', response)
             if (!response.ok) {
               throw new Error('Error al cargar pinturas');
             }
@@ -29,6 +29,7 @@ export function Catalogo (){
 
   if (loading) return <div>Cargando productos...</div>;
   if (error) return <div>Error: {error}</div>;
+
 
     return(
         <div className=' flex flex-row w-6/7 mt-10'>
